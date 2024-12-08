@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="Views\FormSukuCadang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\HomepageOwner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Homepage\V_ManagementTeknisi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\Homepage\V_RiwayatTransaksi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\Homepage\V_SukuCadang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\MainFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Login\V_awal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\Login\V_LoginPemilik.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\TambahLayanan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\TambahProduk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Teknisi\V_LayananServis.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\V_HomePageTeknisi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

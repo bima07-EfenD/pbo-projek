@@ -1,0 +1,30 @@
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\bin\Debug\net8.0-windows\PBO Projek.exe
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\bin\Debug\net8.0-windows\PBO Projek.deps.json
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\bin\Debug\net8.0-windows\PBO Projek.runtimeconfig.json
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\bin\Debug\net8.0-windows\PBO Projek.dll
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\bin\Debug\net8.0-windows\PBO Projek.pdb
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Properties.Resources.resources
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.V_awal.resources
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.V_LoginOwner.resources
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.V_LoginPemilik.resources
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.MainFrame.resources
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO Projek.csproj.GenerateResource.cache
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO Projek.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO Projek.AssemblyInfoInputs.cache
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO Projek.AssemblyInfo.cs
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO Projek.csproj.CoreCompileInputs.cache
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO Projek.dll
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\refint\PBO Projek.dll
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO Projek.pdb
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO Projek.genruntimeconfig.cache
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\ref\PBO Projek.dll
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.HomepageOwner.resources
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.Homepage.V_ManagementTeknisi.resources
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO Projek.sourcelink.json
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.Homepage.V_SukuCadang.resources
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.Homepage.V_RiwayatTransaksi.resources
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.Teknisi.V_LayananServis.resources
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.V_HomePageTeknisi.resources
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.TambahProduk.resources
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.TambahLayanan.resources
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.FormSukuCadang.resources
