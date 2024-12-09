@@ -43,8 +43,13 @@ namespace PBO_Projek.Views.Homepage
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormSukuCadang sukuCadang = new FormSukuCadang();
+            FormSukuCadang sukuCadang = new FormSukuCadang(Controller);
             sukuCadang.ShowDialog();
+        }
+
+        public void dgvsukucadang()
+        {
+
         }
     }
 }

@@ -40,7 +40,7 @@
             label3 = new Label();
             txtPassKas = new TextBox();
             label4 = new Label();
-            button1 = new Button();
+            btnUpdate = new Button();
             lblEid = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -156,21 +156,21 @@
             label4.TabIndex = 39;
             label4.Text = "Password :";
             // 
-            // button1
+            // btnUpdate
             // 
-            button1.BackColor = Color.FromArgb(255, 255, 128);
-            button1.BackgroundImageLayout = ImageLayout.None;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ImageAlign = ContentAlignment.BottomCenter;
-            button1.Location = new Point(223, 478);
-            button1.Name = "button1";
-            button1.Size = new Size(135, 54);
-            button1.TabIndex = 41;
-            button1.Text = "Update";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btnUpdate.BackColor = Color.FromArgb(255, 255, 128);
+            btnUpdate.BackgroundImageLayout = ImageLayout.None;
+            btnUpdate.FlatAppearance.BorderSize = 0;
+            btnUpdate.FlatStyle = FlatStyle.Flat;
+            btnUpdate.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnUpdate.ImageAlign = ContentAlignment.BottomCenter;
+            btnUpdate.Location = new Point(223, 478);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(135, 54);
+            btnUpdate.TabIndex = 41;
+            btnUpdate.Text = "Update";
+            btnUpdate.UseVisualStyleBackColor = false;
+            btnUpdate.Click += button1_Click;
             // 
             // lblEid
             // 
@@ -188,7 +188,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(394, 570);
             Controls.Add(lblEid);
-            Controls.Add(button1);
+            Controls.Add(btnUpdate);
             Controls.Add(txtPassKas);
             Controls.Add(label4);
             Controls.Add(txtNamaKas);
@@ -221,7 +221,7 @@
         private Label label3;
         public TextBox txtPassKas;
         private Label label4;
-        private Button button1;
+        private Button btnUpdate;
         public Label lblEid;
     }
 }

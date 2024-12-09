@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PBO_Projek.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,12 +14,14 @@ namespace PBO_Projek.Views
 {
     public partial class FormSukuCadang : Form
     {
+        C_HomepageOwner Controller;
         String title = "Mekanik Hunter";
         bool cek = false;
-        public FormSukuCadang()
+        public FormSukuCadang(C_HomepageOwner controller)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            Controller = controller;
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -38,26 +41,36 @@ namespace PBO_Projek.Views
 
         private void button2_Click(object sender, EventArgs e)
         {
-            try
+            string namaSukuCadang = txtSuku.Text;
+            int stok;
+            decimal harga;
+            bool stoknya = int.TryParse(txtStok.Text, out stok);
+            bool harganya = decimal.TryParse(txtHarSuk.Text, out harga);
+            if (stoknya && harganya)
             {
-                cekkosong();
-                if (cek)
+                try
                 {
-                    if (MessageBox.Show("Apakah anda yakin ingin menambah?", "Tambah Suku Cadang", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    cekkosong();
+                    if (cek)
                     {
-                        MessageBox.Show("Data Suku Cadang Berhasil Ditambah", title);
-                        Clear();
-                        cek = false;
+                        if (MessageBox.Show("Apakah anda yakin ingin menambah?", "Tambah Suku Cadang", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            Controller.AddSuCa(namaSukuCadang, stok, harga);
+                            MessageBox.Show("Data Suku Cadang Berhasil Ditambah", title);
+                            Clear();
+                            cek = false;
+                        }
+
                     }
 
                 }
+                catch (Exception ex)
+                {
 
+                    MessageBox.Show(ex.Message, title);
+                }
             }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message, title);
-            }
+           
         }
         public void Clear()
         {

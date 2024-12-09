@@ -320,7 +320,6 @@
             Edit.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             Edit.HeaderText = "";
             Edit.Image = (Image)resources.GetObject("Edit.Image");
-            Edit.ImageLayout = DataGridViewImageCellLayout.Stretch;
             Edit.MinimumWidth = 6;
             Edit.Name = "Edit";
             Edit.Width = 6;

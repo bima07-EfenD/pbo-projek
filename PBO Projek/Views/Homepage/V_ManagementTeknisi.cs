@@ -218,6 +218,8 @@ namespace PBO_Projek.Views.Homepage
                 kasir.txtNamaKas.Text = dgvKasir.Rows[e.RowIndex].Cells[2].Value.ToString();
                 kasir.txtUserKas.Text = dgvKasir.Rows[e.RowIndex].Cells[3].Value.ToString();
                 kasir.txtPassKas.Text = dgvKasir.Rows[e.RowIndex].Cells[4].Value.ToString();
+                kasir.ShowDialog();
+                dgvdatakasir();
 
             }
             else if (colName == "Hapus")
@@ -226,19 +228,19 @@ namespace PBO_Projek.Views.Homepage
                 {
                     if (MessageBox.Show("Yakin ingin menghapus ?", "Hapus Kasir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        int idTeknisi = Convert.ToInt32(dgvManagement.Rows[e.RowIndex].Cells["Column1"].Value);
-                        string query = "DELETE FROM Data_Kasir WHERE Id_Kasir = @Column1";
+                        int idKasir = Convert.ToInt32(dgvKasir.Rows[e.RowIndex].Cells["dataGridViewTextBoxColumn2"].Value);
+                        string query = "DELETE FROM Data_Kasir WHERE Id_Kasir = @dataGridViewTextBoxColumn2";
 
                         using (var conn = new NpgsqlConnection(connectionString))
                         {
                             conn.Open();
                             using (var cmd = new NpgsqlCommand(query, conn))
                             {
-                                cmd.Parameters.AddWithValue("@Column1", idTeknisi);
+                                cmd.Parameters.AddWithValue("@dataGridViewTextBoxColumn2", idKasir);
                                 cmd.ExecuteNonQuery();
                             }
                         }
-                        MessageBox.Show("Data teknisi berhasil dihapus!", title);
+                        MessageBox.Show("Data Kasir berhasil dihapus!", title);
                         dgvdatakasir();
 
                     }

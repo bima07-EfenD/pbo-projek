@@ -63,6 +63,37 @@ namespace PBO_Projek.Controller
                 }
             }
         }
+        public void EditKasir(int idkasir, string namakasir, string username, string password)
+        {
+            string query = @" UPDATE data_kasir SET nama_kasir = :nama_kasir, username = :username, password = :password WHERE id_kasir = :id_kasir; ";
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                using (NpgsqlCommand cmd = new NpgsqlCommand(query))
+                {
+                    cmd.Parameters.AddWithValue(":Id_Kasir", idkasir);
+                    cmd.Parameters.AddWithValue(":Nama_Kasir", namakasir);
+                    cmd.Parameters.AddWithValue(":Username", username);
+                    cmd.Parameters.AddWithValue(":Password", password);
+                    Execute_No_Return(cmd);
+                }
+            }
+        }
+        public void AddSuCa(string namaSukuCadang, int stok, decimal harga)
+        {
+            string query = @" INSERT INTO Data_Suku_Cadang (Nama_Suku_Cadang, Stok, Harga) VALUES (:Nama_Suku_Cadang, :Stok, :Harga); ";
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open(); 
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue(":Nama_Suku_Cadang", namaSukuCadang);
+                    cmd.Parameters.AddWithValue(":stok", stok);
+                    cmd.Parameters.AddWithValue(":harga", harga);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+        }
         public void Execute_No_Return(NpgsqlCommand cmd)
         {
             using (var conn = new NpgsqlConnection(addres))

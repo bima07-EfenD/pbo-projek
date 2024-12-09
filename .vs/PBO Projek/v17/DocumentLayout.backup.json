@@ -3,44 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|C:\\Users\\bimak\\source\\repos\\PBO Projek\\pbo projek\\views\\homepage\\v_managementteknisi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|solutionrelative:pbo projek\\views\\homepage\\v_managementteknisi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|c:\\users\\bimak\\source\\repos\\pbo projek\\pbo projek\\controller\\c_homepageowner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|solutionrelative:pbo projek\\controller\\c_homepageowner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|c:\\users\\bimak\\source\\repos\\pbo projek\\pbo projek\\views\\homepage\\v_managementteknisi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|solutionrelative:pbo projek\\views\\homepage\\v_managementteknisi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|c:\\users\\bimak\\source\\repos\\pbo projek\\pbo projek\\core\\connector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|solutionrelative:pbo projek\\core\\connector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|c:\\users\\bimak\\source\\repos\\pbo projek\\pbo projek\\controller\\c_login_register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|solutionrelative:pbo projek\\controller\\c_login_register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|c:\\users\\bimak\\source\\repos\\pbo projek\\pbo projek\\views\\homepage\\v_managementteknisi.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|solutionrelative:pbo projek\\views\\homepage\\v_managementteknisi.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|c:\\users\\bimak\\source\\repos\\pbo projek\\pbo projek\\views\\formdatakasir.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|solutionrelative:pbo projek\\views\\formdatakasir.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|C:\\Users\\bimak\\source\\repos\\PBO Projek\\pbo projek\\views\\homepage\\v_managementteknisi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|solutionrelative:pbo projek\\views\\homepage\\v_managementteknisi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|c:\\users\\bimak\\source\\repos\\pbo projek\\pbo projek\\views\\tambahproduk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|solutionrelative:pbo projek\\views\\tambahproduk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|C:\\Users\\bimak\\source\\repos\\PBO Projek\\pbo projek\\views\\tambahproduk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|solutionrelative:pbo projek\\views\\tambahproduk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|c:\\users\\bimak\\source\\repos\\pbo projek\\pbo projek\\views\\formdatakasir.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|solutionrelative:pbo projek\\views\\formdatakasir.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|C:\\Users\\bimak\\source\\repos\\PBO Projek\\pbo projek\\views\\formdatakasir.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|solutionrelative:pbo projek\\views\\formdatakasir.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|C:\\Users\\bimak\\source\\repos\\PBO Projek\\pbo projek\\views\\tambahproduk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|solutionrelative:pbo projek\\views\\tambahproduk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|c:\\users\\bimak\\source\\repos\\pbo projek\\pbo projek\\views\\formdatakasir.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|solutionrelative:pbo projek\\views\\formdatakasir.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|c:\\users\\bimak\\source\\repos\\pbo projek\\pbo projek\\controller\\c_homepageowner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|solutionrelative:pbo projek\\controller\\c_homepageowner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|c:\\users\\bimak\\source\\repos\\pbo projek\\pbo projek\\controller\\c_login_register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|solutionrelative:pbo projek\\controller\\c_login_register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|c:\\users\\bimak\\source\\repos\\pbo projek\\pbo projek\\core\\connector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|solutionrelative:pbo projek\\core\\connector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|c:\\users\\bimak\\source\\repos\\pbo projek\\pbo projek\\views\\homepageowner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -95,10 +95,6 @@
       "RelativeMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|solutionrelative:pbo projek\\views\\formsukucadang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|c:\\users\\bimak\\source\\repos\\pbo projek\\pbo projek\\views\\formdatakasir.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|solutionrelative:pbo projek\\views\\formdatakasir.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|c:\\users\\bimak\\source\\repos\\pbo projek\\pbo projek\\views\\formsukucadang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F4394075-BDC4-4162-AB58-8C2AB29E6473}|PBO Projek\\PBO Projek.csproj|solutionrelative:pbo projek\\views\\formsukucadang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -126,7 +122,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -146,38 +142,50 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "V_ManagementTeknisi.cs [Design]",
               "DocumentMoniker": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\Homepage\\V_ManagementTeknisi.cs",
               "RelativeDocumentMoniker": "PBO Projek\\Views\\Homepage\\V_ManagementTeknisi.cs",
-              "ToolTip": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\Homepage\\V_ManagementTeknisi.cs [Design]*",
-              "RelativeToolTip": "PBO Projek\\Views\\Homepage\\V_ManagementTeknisi.cs [Design]*",
+              "ToolTip": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\Homepage\\V_ManagementTeknisi.cs [Design]",
+              "RelativeToolTip": "PBO Projek\\Views\\Homepage\\V_ManagementTeknisi.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-09T10:50:02.652Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "C_HomepageOwner.cs",
-              "DocumentMoniker": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Controller\\C_HomepageOwner.cs",
-              "RelativeDocumentMoniker": "PBO Projek\\Controller\\C_HomepageOwner.cs",
-              "ToolTip": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Controller\\C_HomepageOwner.cs",
-              "RelativeToolTip": "PBO Projek\\Controller\\C_HomepageOwner.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAADUAAAA9AAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "FormDataKasir.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\FormDataKasir.cs",
+              "RelativeDocumentMoniker": "PBO Projek\\Views\\FormDataKasir.cs",
+              "ToolTip": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\FormDataKasir.cs [Design]",
+              "RelativeToolTip": "PBO Projek\\Views\\FormDataKasir.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T17:55:47.133Z",
+              "WhenOpened": "2024-12-08T17:49:44.007Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FormDataKasir.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\FormDataKasir.Designer.cs",
+              "RelativeDocumentMoniker": "PBO Projek\\Views\\FormDataKasir.Designer.cs",
+              "ToolTip": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\FormDataKasir.Designer.cs",
+              "RelativeToolTip": "PBO Projek\\Views\\FormDataKasir.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAANoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T17:54:14.856Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "V_ManagementTeknisi.cs",
               "DocumentMoniker": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\Homepage\\V_ManagementTeknisi.cs",
               "RelativeDocumentMoniker": "PBO Projek\\Views\\Homepage\\V_ManagementTeknisi.cs",
-              "ToolTip": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\Homepage\\V_ManagementTeknisi.cs*",
-              "RelativeToolTip": "PBO Projek\\Views\\Homepage\\V_ManagementTeknisi.cs*",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACYAAAAQAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\Homepage\\V_ManagementTeknisi.cs",
+              "RelativeToolTip": "PBO Projek\\Views\\Homepage\\V_ManagementTeknisi.cs",
+              "ViewState": "AgIAAMwAAAAAAAAAAAAnwN0AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-08T19:26:08.596Z",
               "EditorCaption": ""
@@ -185,31 +193,61 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Connector.cs",
-              "DocumentMoniker": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Core\\Connector.cs",
-              "RelativeDocumentMoniker": "PBO Projek\\Core\\Connector.cs",
-              "ToolTip": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Core\\Connector.cs",
-              "RelativeToolTip": "PBO Projek\\Core\\Connector.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAzwA8AAAAmAAAAAAAAAA==",
+              "Title": "TambahProduk.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\TambahProduk.cs",
+              "RelativeDocumentMoniker": "PBO Projek\\Views\\TambahProduk.cs",
+              "ToolTip": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\TambahProduk.cs [Design]",
+              "RelativeToolTip": "PBO Projek\\Views\\TambahProduk.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T18:14:02.779Z"
+              "WhenOpened": "2024-12-08T16:44:34.049Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "V_ManagementTeknisi.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\Homepage\\V_ManagementTeknisi.Designer.cs",
-              "RelativeDocumentMoniker": "PBO Projek\\Views\\Homepage\\V_ManagementTeknisi.Designer.cs",
-              "ToolTip": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\Homepage\\V_ManagementTeknisi.Designer.cs*",
-              "RelativeToolTip": "PBO Projek\\Views\\Homepage\\V_ManagementTeknisi.Designer.cs*",
-              "ViewState": "AgIAANIAAAAAAAAAAAAYwGkBAAAdAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "TambahProduk.cs",
+              "DocumentMoniker": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\TambahProduk.cs",
+              "RelativeDocumentMoniker": "PBO Projek\\Views\\TambahProduk.cs",
+              "ToolTip": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\TambahProduk.cs",
+              "RelativeToolTip": "PBO Projek\\Views\\TambahProduk.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAgwCEAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T03:24:04.061Z",
+              "WhenOpened": "2024-12-08T22:50:43.705Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "FormDataKasir.cs",
+              "DocumentMoniker": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\FormDataKasir.cs",
+              "RelativeDocumentMoniker": "PBO Projek\\Views\\FormDataKasir.cs",
+              "ToolTip": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\FormDataKasir.cs",
+              "RelativeToolTip": "PBO Projek\\Views\\FormDataKasir.cs",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAvwCYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T19:12:25.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "C_HomepageOwner.cs",
+              "DocumentMoniker": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Controller\\C_HomepageOwner.cs",
+              "RelativeDocumentMoniker": "PBO Projek\\Controller\\C_HomepageOwner.cs",
+              "ToolTip": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Controller\\C_HomepageOwner.cs",
+              "RelativeToolTip": "PBO Projek\\Controller\\C_HomepageOwner.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAIwEkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T17:55:47.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "C_Login_Register.cs",
               "DocumentMoniker": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Controller\\C_Login_Register.cs",
               "RelativeDocumentMoniker": "PBO Projek\\Controller\\C_Login_Register.cs",
@@ -221,51 +259,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "TambahProduk.cs",
-              "DocumentMoniker": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\TambahProduk.cs",
-              "RelativeDocumentMoniker": "PBO Projek\\Views\\TambahProduk.cs",
-              "ToolTip": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\TambahProduk.cs",
-              "RelativeToolTip": "PBO Projek\\Views\\TambahProduk.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAA1wCEAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T22:50:43.705Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "FormDataKasir.cs",
-              "DocumentMoniker": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\FormDataKasir.cs",
-              "RelativeDocumentMoniker": "PBO Projek\\Views\\FormDataKasir.cs",
-              "ToolTip": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\FormDataKasir.cs",
-              "RelativeToolTip": "PBO Projek\\Views\\FormDataKasir.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAIA3wDUAAABLAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T19:33:11.84Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "FormDataKasir.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\FormDataKasir.cs",
-              "RelativeDocumentMoniker": "PBO Projek\\Views\\FormDataKasir.cs",
-              "ToolTip": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\FormDataKasir.cs [Design]",
-              "RelativeToolTip": "PBO Projek\\Views\\FormDataKasir.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T17:49:44.007Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "TambahProduk.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\TambahProduk.cs",
-              "RelativeDocumentMoniker": "PBO Projek\\Views\\TambahProduk.cs",
-              "ToolTip": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\TambahProduk.cs [Design]",
-              "RelativeToolTip": "PBO Projek\\Views\\TambahProduk.cs [Design]",
+              "Title": "Connector.cs",
+              "DocumentMoniker": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Core\\Connector.cs",
+              "RelativeDocumentMoniker": "PBO Projek\\Core\\Connector.cs",
+              "ToolTip": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Core\\Connector.cs",
+              "RelativeToolTip": "PBO Projek\\Core\\Connector.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAzwA8AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T16:44:34.049Z"
+              "WhenOpened": "2024-12-08T18:14:02.779Z"
             },
             {
               "$type": "Document",
@@ -390,18 +392,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 23,
-              "Title": "FormDataKasir.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\FormDataKasir.Designer.cs",
-              "RelativeDocumentMoniker": "PBO Projek\\Views\\FormDataKasir.Designer.cs",
-              "ToolTip": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\FormDataKasir.Designer.cs",
-              "RelativeToolTip": "PBO Projek\\Views\\FormDataKasir.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T17:54:14.856Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
               "Title": "FormSukuCadang.cs",
               "DocumentMoniker": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\FormSukuCadang.cs",
               "RelativeDocumentMoniker": "PBO Projek\\Views\\FormSukuCadang.cs",
@@ -414,7 +404,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 26,
               "Title": "V_LoginPegawai.cs",
               "DocumentMoniker": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\Login\\V_LoginPegawai.cs",
               "RelativeDocumentMoniker": "PBO Projek\\Views\\Login\\V_LoginPegawai.cs",
@@ -460,7 +450,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 24,
               "Title": "MainFrame.cs [Design]",
               "DocumentMoniker": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\MainFrame.cs",
               "RelativeDocumentMoniker": "PBO Projek\\Views\\MainFrame.cs",
@@ -471,7 +461,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 25,
               "Title": "V_LoginPegawai.cs [Design]",
               "DocumentMoniker": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\Login\\V_LoginPegawai.cs",
               "RelativeDocumentMoniker": "PBO Projek\\Views\\Login\\V_LoginPegawai.cs",
@@ -482,7 +472,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 27,
               "Title": "V_awal.cs [Design]",
               "DocumentMoniker": "C:\\Users\\bimak\\source\\repos\\PBO Projek\\PBO Projek\\Views\\Login\\V_awal.cs",
               "RelativeDocumentMoniker": "PBO Projek\\Views\\Login\\V_awal.cs",

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Runtime.ConstrainedExecution;
 using System.Text;
@@ -36,7 +37,40 @@ namespace PBO_Projek.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
+            int idkasir;
+            string namakasir = txtNamaKas.Text;
+            string username = txtUserKas.Text;
+            string password = txtPassKas.Text;
+            try
+            {
+                if (int.TryParse(lblEid.Text, out idkasir))
+                {
+                    cekkosong();
+                    if (cek)
+                    {
+                        if (MessageBox.Show("Apakah anda yakin ingin mengedit?", "Edit Kasir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            Controller.EditKasir(idkasir, namakasir, username, password);
+                            MessageBox.Show("Data Kasir Berhasil Diedit", title);
+                            Clear();
+                            this.Dispose();
 
+                        }
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("ID Kasir tidak valid.", title);
+                }
+                
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, title);
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
