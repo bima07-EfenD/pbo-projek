@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PBO_Projek.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,14 +11,16 @@ using System.Windows.Forms;
 
 namespace PBO_Projek.Views
 {
-    public partial class TambahProduk : Form
+    public partial class TambahTeknisi : Form
     {
+        C_HomepageOwner Controller;
         String title = "Mekanik Hunter";
         bool cek = false;
-        public TambahProduk()
+        public TambahTeknisi(C_HomepageOwner controller)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            Controller = controller;
 
 
         }
@@ -26,39 +29,9 @@ namespace PBO_Projek.Views
         {
             this.Dispose();
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNamaTek_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUser_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPass_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
+            string namaTeknisi = txtNamaTek.Text;
             try
             {
                 cekkosong();
@@ -66,7 +39,8 @@ namespace PBO_Projek.Views
                 {
                     if (MessageBox.Show("Apakah anda yakin ingin menambah?", "Tambah Teknisi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        MessageBox.Show("Data Teknisi Berhasil DItambah", title);
+                        Controller.AddTeknisi(namaTeknisi);
+                        MessageBox.Show("Data Teknisi Berhasil Ditambah", title);
                         Clear();
                         cek = false;
                     }

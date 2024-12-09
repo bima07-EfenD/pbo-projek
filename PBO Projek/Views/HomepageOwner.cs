@@ -19,7 +19,6 @@ namespace PBO_Projek.Views
         {
             InitializeComponent();
             Controller = new C_HomepageOwner(this);
-
         }
 
         private void HomepageOwner_Load(object sender, EventArgs e)
@@ -48,7 +47,7 @@ namespace PBO_Projek.Views
             Controller.SwitchView(Controller.V_ManagementTeknisi);
         }
 
-       private void button5_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
@@ -74,6 +73,16 @@ namespace PBO_Projek.Views
 
 
         private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
         {
 
         }

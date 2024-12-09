@@ -32,14 +32,14 @@
             btnBack = new Button();
             button3 = new Button();
             button2 = new Button();
-            txtHarLay = new TextBox();
-            txtLayanan = new TextBox();
+            txtHarSuk = new TextBox();
+            txtSuku = new TextBox();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             panel1 = new Panel();
             label4 = new Label();
-            textBox1 = new TextBox();
+            txtStok = new TextBox();
             SuspendLayout();
             // 
             // btnBack
@@ -77,22 +77,23 @@
             button2.Name = "button2";
             button2.Size = new Size(94, 29);
             button2.TabIndex = 32;
-            button2.Text = "Save";
+            button2.Text = "Tambah";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
-            // txtHarLay
+            // txtHarSuk
             // 
-            txtHarLay.Location = new Point(157, 138);
-            txtHarLay.Name = "txtHarLay";
-            txtHarLay.Size = new Size(182, 27);
-            txtHarLay.TabIndex = 31;
+            txtHarSuk.Location = new Point(157, 138);
+            txtHarSuk.Name = "txtHarSuk";
+            txtHarSuk.Size = new Size(182, 27);
+            txtHarSuk.TabIndex = 31;
             // 
-            // txtLayanan
+            // txtSuku
             // 
-            txtLayanan.Location = new Point(157, 85);
-            txtLayanan.Name = "txtLayanan";
-            txtLayanan.Size = new Size(424, 27);
-            txtLayanan.TabIndex = 30;
+            txtSuku.Location = new Point(157, 85);
+            txtSuku.Name = "txtSuku";
+            txtSuku.Size = new Size(424, 27);
+            txtSuku.TabIndex = 30;
             // 
             // label3
             // 
@@ -142,25 +143,25 @@
             label4.TabIndex = 35;
             label4.Text = "Stok :";
             // 
-            // textBox1
+            // txtStok
             // 
-            textBox1.Location = new Point(467, 138);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(114, 27);
-            textBox1.TabIndex = 36;
+            txtStok.Location = new Point(467, 138);
+            txtStok.Name = "txtStok";
+            txtStok.Size = new Size(114, 27);
+            txtStok.TabIndex = 36;
             // 
             // FormSukuCadang
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(621, 245);
-            Controls.Add(textBox1);
+            Controls.Add(txtStok);
             Controls.Add(label4);
             Controls.Add(btnBack);
             Controls.Add(button3);
             Controls.Add(button2);
-            Controls.Add(txtHarLay);
-            Controls.Add(txtLayanan);
+            Controls.Add(txtHarSuk);
+            Controls.Add(txtSuku);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -168,6 +169,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormSukuCadang";
             Text = "FormSukuCadang";
+            Load += FormSukuCadang_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -177,13 +179,13 @@
         private Button btnBack;
         private Button button3;
         private Button button2;
-        private TextBox txtHarLay;
-        private TextBox txtLayanan;
+        private TextBox txtHarSuk;
+        private TextBox txtSuku;
         private Label label3;
         private Label label2;
         private Label label1;
         private Panel panel1;
         private Label label4;
-        private TextBox textBox1;
+        private TextBox txtStok;
     }
 }

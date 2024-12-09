@@ -40,7 +40,7 @@
             button1.Cursor = Cursors.Hand;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(40, 144);
+            button1.Location = new Point(40, 139);
             button1.Name = "button1";
             button1.RightToLeft = RightToLeft.No;
             button1.Size = new Size(452, 50);
@@ -70,6 +70,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             Controls.Add(button2);
             Controls.Add(button1);
+            DoubleBuffered = true;
             Name = "V_awal";
             Size = new Size(529, 413);
             Load += V_awal_Load;

@@ -25,6 +25,13 @@ C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO_P
 C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.Homepage.V_RiwayatTransaksi.resources
 C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.Teknisi.V_LayananServis.resources
 C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.V_HomePageTeknisi.resources
-C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.TambahProduk.resources
 C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.TambahLayanan.resources
 C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.FormSukuCadang.resources
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.FormDataKasir.resources
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\bin\Debug\net8.0-windows\Npgsql.dll
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO Projek.csproj.AssemblyReference.cache
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO Projek.csproj.Up2Date
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.Homepage.V_TambahLayanan.resources
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.TambahTeknisi.resources

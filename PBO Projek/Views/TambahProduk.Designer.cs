@@ -1,6 +1,6 @@
 ﻿namespace PBO_Projek.Views
 {
-    partial class TambahProduk
+    partial class TambahTeknisi
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TambahProduk));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TambahTeknisi));
             btnBack = new Button();
             label2 = new Label();
             pictureBox1 = new PictureBox();
@@ -73,7 +73,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 15;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // label1
             // 
@@ -84,7 +83,6 @@
             label1.Size = new Size(221, 34);
             label1.TabIndex = 14;
             label1.Text = "Tambah Teknisi";
-            label1.Click += label1_Click;
             // 
             // panel1
             // 
@@ -94,7 +92,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(394, 39);
             panel1.TabIndex = 13;
-            panel1.Paint += panel1_Paint;
             // 
             // txtNamaTek
             // 
@@ -102,7 +99,6 @@
             txtNamaTek.Name = "txtNamaTek";
             txtNamaTek.Size = new Size(228, 27);
             txtNamaTek.TabIndex = 25;
-            txtNamaTek.TextChanged += txtNamaTek_TextChanged_1;
             // 
             // btnSave
             // 
@@ -116,11 +112,11 @@
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(135, 54);
             btnSave.TabIndex = 29;
-            btnSave.Text = "Save";
+            btnSave.Text = "Tambah";
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 
-            // TambahProduk
+            // TambahTeknisi
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -133,7 +129,7 @@
             Controls.Add(label1);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "TambahProduk";
+            Name = "TambahTeknisi";
             Text = "TambahProduk";
             Load += TambahProduk_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

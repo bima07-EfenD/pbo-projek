@@ -138,6 +138,7 @@
             Controls.Add(checkBox1);
             Controls.Add(button1);
             Controls.Add(panel1);
+            DoubleBuffered = true;
             Name = "V_LoginOwner";
             Size = new Size(529, 413);
             Load += V_LoginOwner_Load;

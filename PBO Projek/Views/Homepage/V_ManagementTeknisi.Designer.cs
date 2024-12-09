@@ -32,9 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_ManagementTeknisi));
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             dgvManagement = new DataGridView();
+            Coloumn1 = new DataGridViewTextBoxColumn();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
+            Delete = new DataGridViewImageColumn();
             panel1 = new Panel();
             panel2 = new Panel();
             button1 = new Button();
@@ -44,19 +45,22 @@
             panel3 = new Panel();
             panel4 = new Panel();
             button2 = new Button();
-            textBox1 = new TextBox();
+            txtsKas = new TextBox();
             label2 = new Label();
-            dataGridView1 = new DataGridView();
+            dgvKasir = new DataGridView();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
+            Password = new DataGridViewTextBoxColumn();
+            Edit = new DataGridViewImageColumn();
+            Hapus = new DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)dgvManagement).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvKasir).BeginInit();
             SuspendLayout();
             // 
             // dgvManagement
@@ -77,7 +81,7 @@
             dgvManagement.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvManagement.ColumnHeadersHeight = 35;
             dgvManagement.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvManagement.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3 });
+            dgvManagement.Columns.AddRange(new DataGridViewColumn[] { Coloumn1, Column1, Column2, Delete });
             dgvManagement.Dock = DockStyle.Top;
             dgvManagement.EnableHeadersVisualStyles = false;
             dgvManagement.Location = new Point(0, 0);
@@ -88,28 +92,37 @@
             dgvManagement.TabIndex = 0;
             dgvManagement.CellContentClick += dgvManagement_CellContentClick;
             // 
+            // Coloumn1
+            // 
+            Coloumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Coloumn1.HeaderText = "No";
+            Coloumn1.MinimumWidth = 6;
+            Coloumn1.Name = "Coloumn1";
+            Coloumn1.Width = 56;
+            // 
             // Column1
             // 
             Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Column1.HeaderText = "No";
+            Column1.HeaderText = "ID Teknisi";
             Column1.MinimumWidth = 6;
             Column1.Name = "Column1";
-            Column1.Width = 56;
+            Column1.Width = 99;
             // 
             // Column2
             // 
-            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Column2.HeaderText = "Id";
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column2.HeaderText = "Nama Teknisi";
             Column2.MinimumWidth = 6;
             Column2.Name = "Column2";
-            Column2.Width = 49;
             // 
-            // Column3
+            // Delete
             // 
-            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column3.HeaderText = "Nama Teknisi";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
+            Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Delete.HeaderText = "";
+            Delete.Image = (Image)resources.GetObject("Delete.Image");
+            Delete.MinimumWidth = 6;
+            Delete.Name = "Delete";
+            Delete.Width = 6;
             // 
             // panel1
             // 
@@ -152,6 +165,7 @@
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(168, 27);
             txtSearch.TabIndex = 1;
+            txtSearch.TextChanged += txtSearch_TextChanged;
             // 
             // label1
             // 
@@ -181,7 +195,7 @@
             // panel3
             // 
             panel3.Controls.Add(panel4);
-            panel3.Controls.Add(dataGridView1);
+            panel3.Controls.Add(dgvKasir);
             panel3.Location = new Point(622, 121);
             panel3.Name = "panel3";
             panel3.Size = new Size(479, 491);
@@ -191,7 +205,7 @@
             // 
             panel4.BackColor = Color.LimeGreen;
             panel4.Controls.Add(button2);
-            panel4.Controls.Add(textBox1);
+            panel4.Controls.Add(txtsKas);
             panel4.Controls.Add(label2);
             panel4.Dock = DockStyle.Bottom;
             panel4.Location = new Point(0, 441);
@@ -207,19 +221,20 @@
             button2.BackgroundImageLayout = ImageLayout.Stretch;
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(434, 10);
+            button2.Location = new Point(424, 10);
             button2.Name = "button2";
             button2.Size = new Size(30, 30);
-            button2.TabIndex = 2;
+            button2.TabIndex = 3;
             button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            button2.Click += button2_Click_1;
             // 
-            // textBox1
+            // txtsKas
             // 
-            textBox1.Location = new Point(98, 13);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(168, 27);
-            textBox1.TabIndex = 1;
+            txtsKas.Location = new Point(98, 13);
+            txtsKas.Name = "txtsKas";
+            txtsKas.Size = new Size(168, 27);
+            txtsKas.TabIndex = 1;
+            txtsKas.TextChanged += textBox1_TextChanged;
             // 
             // label2
             // 
@@ -232,14 +247,14 @@
             label2.TabIndex = 0;
             label2.Text = "Search";
             // 
-            // dataGridView1
+            // dgvKasir
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AllowUserToResizeColumns = false;
-            dataGridView1.AllowUserToResizeRows = false;
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvKasir.AllowUserToAddRows = false;
+            dgvKasir.AllowUserToDeleteRows = false;
+            dgvKasir.AllowUserToResizeColumns = false;
+            dgvKasir.AllowUserToResizeRows = false;
+            dgvKasir.BackgroundColor = Color.White;
+            dgvKasir.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.LimeGreen;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
@@ -247,18 +262,19 @@
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView1.ColumnHeadersHeight = 35;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, Column4 });
-            dataGridView1.Dock = DockStyle.Top;
-            dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.Location = new Point(0, 0);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(479, 576);
-            dataGridView1.TabIndex = 0;
+            dgvKasir.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvKasir.ColumnHeadersHeight = 35;
+            dgvKasir.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvKasir.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, Column4, Password, Edit, Hapus });
+            dgvKasir.Dock = DockStyle.Top;
+            dgvKasir.EnableHeadersVisualStyles = false;
+            dgvKasir.Location = new Point(0, 0);
+            dgvKasir.Name = "dgvKasir";
+            dgvKasir.RowHeadersVisible = false;
+            dgvKasir.RowHeadersWidth = 51;
+            dgvKasir.Size = new Size(479, 576);
+            dgvKasir.TabIndex = 0;
+            dgvKasir.CellContentClick += dgvKasir_CellContentClick;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -279,17 +295,44 @@
             // dataGridViewTextBoxColumn3
             // 
             dataGridViewTextBoxColumn3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn3.HeaderText = "Nama Layanan";
+            dataGridViewTextBoxColumn3.HeaderText = "Nama Kasir";
             dataGridViewTextBoxColumn3.MinimumWidth = 6;
             dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // Column4
             // 
             Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Column4.HeaderText = "Harga";
+            Column4.HeaderText = "Username";
             Column4.MinimumWidth = 6;
             Column4.Name = "Column4";
-            Column4.Width = 77;
+            Column4.Width = 102;
+            // 
+            // Password
+            // 
+            Password.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Password.HeaderText = "Password";
+            Password.MinimumWidth = 6;
+            Password.Name = "Password";
+            Password.Width = 97;
+            // 
+            // Edit
+            // 
+            Edit.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Edit.HeaderText = "";
+            Edit.Image = (Image)resources.GetObject("Edit.Image");
+            Edit.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            Edit.MinimumWidth = 6;
+            Edit.Name = "Edit";
+            Edit.Width = 6;
+            // 
+            // Hapus
+            // 
+            Hapus.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Hapus.HeaderText = "";
+            Hapus.Image = (Image)resources.GetObject("Hapus.Image");
+            Hapus.MinimumWidth = 6;
+            Hapus.Name = "Hapus";
+            Hapus.Width = 6;
             // 
             // V_ManagementTeknisi
             // 
@@ -307,31 +350,35 @@
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvKasir).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView dgvManagement;
+        public DataGridView dgvManagement;
         private Panel panel1;
         private Panel panel2;
         private Button btnAdd;
         private TextBox txtSearch;
         private Label label1;
         private Button button1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
         private Panel panel3;
         private Panel panel4;
-        private Button button2;
-        private TextBox textBox1;
+        private TextBox txtsKas;
         private Label label2;
-        private DataGridView dataGridView1;
+        public DataGridView dgvKasir;
+        private Button button2;
+        private DataGridViewTextBoxColumn Coloumn1;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewImageColumn Delete;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Password;
+        private DataGridViewImageColumn Edit;
+        private DataGridViewImageColumn Hapus;
     }
 }

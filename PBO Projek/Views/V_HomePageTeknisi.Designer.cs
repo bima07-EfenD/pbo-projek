@@ -56,6 +56,7 @@
             button3.BackColor = Color.Transparent;
             button3.BackgroundImageLayout = ImageLayout.None;
             button3.Cursor = Cursors.Hand;
+            button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Location = new Point(30, 353);
             button3.Name = "button3";
@@ -68,6 +69,7 @@
             button2.BackColor = Color.Transparent;
             button2.BackgroundImageLayout = ImageLayout.None;
             button2.Cursor = Cursors.Hand;
+            button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Location = new Point(30, 282);
             button2.Name = "button2";
@@ -81,6 +83,7 @@
             button1.BackColor = Color.Transparent;
             button1.BackgroundImageLayout = ImageLayout.None;
             button1.Cursor = Cursors.Hand;
+            button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Location = new Point(30, 211);
             button1.Name = "button1";

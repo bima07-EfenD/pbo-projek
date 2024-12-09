@@ -49,12 +49,7 @@ namespace PBO_Projek.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            HomepageOwner homepageOwner = new HomepageOwner();
-            Controller.v_mainFrame.Hide();
-            homepageOwner.ShowDialog();
-            Controller.v_mainFrame.Close();
-            
-
+            Controller.login();
         }
     }
 }
