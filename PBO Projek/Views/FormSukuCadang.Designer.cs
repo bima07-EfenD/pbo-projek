@@ -87,6 +87,8 @@
             txtHarSuk.Name = "txtHarSuk";
             txtHarSuk.Size = new Size(182, 27);
             txtHarSuk.TabIndex = 31;
+            txtHarSuk.TextChanged += txtHarSuk_TextChanged;
+            txtHarSuk.KeyPress += txtHarSuk_KeyPress;
             // 
             // txtSuku
             // 
@@ -149,6 +151,7 @@
             txtStok.Name = "txtStok";
             txtStok.Size = new Size(114, 27);
             txtStok.TabIndex = 36;
+            txtStok.KeyPress += txtStok_KeyPress;
             // 
             // FormSukuCadang
             // 

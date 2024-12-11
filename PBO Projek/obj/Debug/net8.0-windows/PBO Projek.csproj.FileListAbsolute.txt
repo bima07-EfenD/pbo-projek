@@ -19,7 +19,6 @@ C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO P
 C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO Projek.genruntimeconfig.cache
 C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\ref\PBO Projek.dll
 C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.HomepageOwner.resources
-C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.Homepage.V_ManagementTeknisi.resources
 C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO Projek.sourcelink.json
 C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.Homepage.V_SukuCadang.resources
 C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.Homepage.V_RiwayatTransaksi.resources
@@ -35,3 +34,4 @@ C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO P
 C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO Projek.csproj.Up2Date
 C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.Homepage.V_TambahLayanan.resources
 C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.TambahTeknisi.resources
+C:\Users\bimak\source\repos\PBO Projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.Homepage.V_ManagementTeknisiDanKasir.resources

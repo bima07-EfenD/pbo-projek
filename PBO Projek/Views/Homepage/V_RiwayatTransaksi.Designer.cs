@@ -28,33 +28,173 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            panel3 = new Panel();
+            panel4 = new Panel();
+            textBox1 = new TextBox();
+            label2 = new Label();
+            dgvLay = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
+            Column7 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            panel3.SuspendLayout();
+            panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvLay).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // panel3
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(420, 173);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(300, 188);
-            dataGridView1.TabIndex = 0;
+            panel3.Controls.Add(panel4);
+            panel3.Controls.Add(dgvLay);
+            panel3.Location = new Point(133, 240);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(918, 491);
+            panel3.TabIndex = 5;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.LimeGreen;
+            panel4.Controls.Add(textBox1);
+            panel4.Controls.Add(label2);
+            panel4.Dock = DockStyle.Bottom;
+            panel4.Location = new Point(0, 441);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(918, 50);
+            panel4.TabIndex = 2;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(98, 13);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(168, 27);
+            textBox1.TabIndex = 1;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(20, 15);
+            label2.Name = "label2";
+            label2.Size = new Size(72, 22);
+            label2.TabIndex = 0;
+            label2.Text = "Search";
+            // 
+            // dgvLay
+            // 
+            dgvLay.AllowUserToAddRows = false;
+            dgvLay.AllowUserToDeleteRows = false;
+            dgvLay.AllowUserToResizeColumns = false;
+            dgvLay.AllowUserToResizeRows = false;
+            dgvLay.BackgroundColor = Color.White;
+            dgvLay.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.LimeGreen;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvLay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvLay.ColumnHeadersHeight = 35;
+            dgvLay.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvLay.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column6, Column7, Column4, Column5 });
+            dgvLay.Dock = DockStyle.Top;
+            dgvLay.EnableHeadersVisualStyles = false;
+            dgvLay.Location = new Point(0, 0);
+            dgvLay.Name = "dgvLay";
+            dgvLay.RowHeadersVisible = false;
+            dgvLay.RowHeadersWidth = 51;
+            dgvLay.Size = new Size(918, 576);
+            dgvLay.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column1.HeaderText = "No";
+            Column1.MinimumWidth = 6;
+            Column1.Name = "Column1";
+            Column1.Width = 56;
+            // 
+            // Column2
+            // 
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column2.HeaderText = "Id Transaksi";
+            Column2.MinimumWidth = 6;
+            Column2.Name = "Column2";
+            Column2.Width = 112;
+            // 
+            // Column3
+            // 
+            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column3.HeaderText = "Nama Kendaraan";
+            Column3.MinimumWidth = 6;
+            Column3.Name = "Column3";
+            // 
+            // Column6
+            // 
+            Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column6.HeaderText = "Kasir";
+            Column6.MinimumWidth = 6;
+            Column6.Name = "Column6";
+            Column6.Width = 68;
+            // 
+            // Column7
+            // 
+            Column7.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column7.HeaderText = "Teknisi";
+            Column7.MinimumWidth = 6;
+            Column7.Name = "Column7";
+            Column7.Width = 80;
+            // 
+            // Column4
+            // 
+            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column4.HeaderText = "Tanggal Transaksi";
+            Column4.MinimumWidth = 6;
+            Column4.Name = "Column4";
+            Column4.Width = 151;
+            // 
+            // Column5
+            // 
+            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column5.HeaderText = "Total Harga";
+            Column5.MinimumWidth = 6;
+            Column5.Name = "Column5";
+            Column5.Width = 114;
             // 
             // V_RiwayatTransaksi
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(dataGridView1);
+            Controls.Add(panel3);
             Name = "V_RiwayatTransaksi";
             Size = new Size(1185, 970);
             Load += V_RiwayatTransaksi_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel3.ResumeLayout(false);
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvLay).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private Panel panel3;
+        private Panel panel4;
+        private TextBox textBox1;
+        private Label label2;
+        private DataGridView dgvLay;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column7;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
     }
 }

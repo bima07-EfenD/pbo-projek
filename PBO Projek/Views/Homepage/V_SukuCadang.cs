@@ -1,4 +1,5 @@
-﻿using PBO_Projek.Controller;
+﻿using Npgsql;
+using PBO_Projek.Controller;
 using System;
 using System.Collections.Generic;   
 using System.ComponentModel;
@@ -13,12 +14,15 @@ namespace PBO_Projek.Views.Homepage
 {
     public partial class V_SukuCadang : UserControl
     {
-        C_HomepageOwner Controller;
+        private string connectionString = "Host=localhost;Database=MekanikHunter;Username=postgres;Password=123";
+        C_Homepage Controller;
         C_HomepageTeknisi _Controller;
-        public V_SukuCadang(C_HomepageOwner controller)
+        string title = "Mekanik Hunter";
+        public V_SukuCadang(C_Homepage controller)
         {
             InitializeComponent();
             Controller = controller;
+            dgvsukucadang();
         }
         public V_SukuCadang(C_HomepageTeknisi controller)
         {
@@ -49,7 +53,36 @@ namespace PBO_Projek.Views.Homepage
 
         public void dgvsukucadang()
         {
+            try
+            {
+                dgvSukuCadang.Rows.Clear();
+                string query = "SELECT Id_Suku_Cadang, Nama_Suku_Cadang, Stok, Harga FROM Data_Suku_Cadang";
+                using (var conn = new NpgsqlConnection(connectionString))
+                {
+                    conn.Open();
+                    using (var cmd = new NpgsqlCommand(query, conn))
+                    {
+                        DataTable dataTable = new DataTable();
+                        dataTable.Load(cmd.ExecuteReader());
+                        dataTable.Columns.Add("No", typeof(int));
+                        for (int i = 0; i < dataTable.Rows.Count; i++)
+                        {
+                            dataTable.Rows[i]["No"] = i + 1;
+                        }
+                        dgvSukuCadang.Rows.Clear();
+                        foreach (DataRow row in dataTable.Rows)
+                        {
+                            dgvSukuCadang.Rows.Add(row["No"], row["Id_Suku_Cadang"], row["Nama_Suku_Cadang"], row["Stok"], row["Harga"]);
+                        }
 
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, title);
+            }
         }
     }
 }

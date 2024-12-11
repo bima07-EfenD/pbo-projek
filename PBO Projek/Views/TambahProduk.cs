@@ -13,10 +13,10 @@ namespace PBO_Projek.Views
 {
     public partial class TambahTeknisi : Form
     {
-        C_HomepageOwner Controller;
+        C_Homepage Controller;
         String title = "Mekanik Hunter";
         bool cek = false;
-        public TambahTeknisi(C_HomepageOwner controller)
+        public TambahTeknisi(C_Homepage controller)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;

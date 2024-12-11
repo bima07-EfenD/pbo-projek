@@ -209,8 +209,6 @@
         }
 
         #endregion
-
-        private Button btnSave;
         public TextBox txtUserKas;
         private Button btnBack;
         private Label label2;
@@ -221,7 +219,8 @@
         private Label label3;
         public TextBox txtPassKas;
         private Label label4;
-        private Button btnUpdate;
         public Label lblEid;
+        public Button btnSave;
+        public Button btnUpdate;
     }
 }

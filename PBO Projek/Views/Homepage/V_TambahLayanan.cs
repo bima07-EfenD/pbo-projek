@@ -1,4 +1,5 @@
-﻿using PBO_Projek.Controller;
+﻿using Npgsql;
+using PBO_Projek.Controller;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,11 +14,14 @@ namespace PBO_Projek.Views.Homepage
 {
     public partial class V_TambahLayanan : UserControl
     {
-        C_HomepageOwner Controller;
-        public V_TambahLayanan(C_HomepageOwner controller)
+        private string connectionString = "Host=localhost;Database=MekanikHunter;Username=postgres;Password=123";
+        C_Homepage Controller;
+        string title = "Mekanik Hunter";
+        public V_TambahLayanan(C_Homepage controller)
         {
             InitializeComponent();
             Controller = controller;
+            dgvlayanan();
         }
 
         private void V_TambahLayanan_Load(object sender, EventArgs e)
@@ -27,8 +31,81 @@ namespace PBO_Projek.Views.Homepage
 
         private void button2_Click(object sender, EventArgs e)
         {
-            TambahLayanan tambahLayanan = new TambahLayanan();
+            TambahLayanan tambahLayanan = new TambahLayanan(Controller, false);
             tambahLayanan.ShowDialog();
+            dgvlayanan();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string query = "SELECT Id_Layanan, Nama_Layanan, Harga_Layanan FROM Data_Layanan WHERE Nama_Layanan LIKE @searchText";
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open(); using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@searchText", "%" + textBox1.Text + "%");
+                    DataTable dataTable = new DataTable();
+                    dataTable.Load(cmd.ExecuteReader());
+                    dataTable.Columns.Add("No", typeof(int));
+                    for (int i = 0; i < dataTable.Rows.Count; i++)
+                    {
+                        dataTable.Rows[i]["No"] = i + 1;
+                    }
+                    dgvLay.Rows.Clear();
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        dgvLay.Rows.Add(row["No"], row["Id_Layanan"], row["Nama_Layanan"], row["Harga_Layanan"]);
+                    }
+                }
+            }
+        }
+        public void dgvlayanan()
+        {
+            try
+            {
+
+                dgvLay.Rows.Clear();
+                string query = "SELECT Id_Layanan, Nama_Layanan, Harga_Layanan FROM Data_Layanan";
+                using (var conn = new NpgsqlConnection(connectionString))
+                {
+                    conn.Open();
+                    using (var cmd = new NpgsqlCommand(query, conn))
+                    {
+                        DataTable dataTable = new DataTable();
+                        dataTable.Load(cmd.ExecuteReader());
+                        dataTable.Columns.Add("No", typeof(int));
+                        for (int i = 0; i < dataTable.Rows.Count; i++)
+                        {
+                            dataTable.Rows[i]["No"] = i + 1;
+                        }
+                        dgvLay.Rows.Clear();
+                        foreach (DataRow row in dataTable.Rows)
+                        {
+                            dgvLay.Rows.Add(row["No"], row["Id_Layanan"], row["Nama_Layanan"], row["Harga_Layanan"]);
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, title);
+            }
+        }
+
+        private void dgvLay_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string colName = dgvLay.Columns[e.ColumnIndex].Name;
+            if (colName == "Edit")
+            {
+                TambahLayanan layanan = new TambahLayanan(Controller, true);
+                layanan.lblid.Text = dgvLay.Rows[e.RowIndex].Cells[1].Value.ToString();
+                layanan.txtLayanan.Text = dgvLay.Rows[e.RowIndex].Cells[2].Value.ToString();
+                layanan.txtHarLay.Text = dgvLay.Rows[e.RowIndex].Cells[3].Value.ToString();
+                layanan.ShowDialog();
+
+            }
         }
     }
 }

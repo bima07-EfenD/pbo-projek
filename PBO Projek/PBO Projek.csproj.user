@@ -10,7 +10,7 @@
     <Compile Update="Views\HomepageOwner.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\Homepage\V_ManagementTeknisi.cs">
+    <Compile Update="Views\Homepage\V_ManagementTeknisiDanKasir.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Views\Homepage\V_RiwayatTransaksi.cs">

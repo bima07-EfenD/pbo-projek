@@ -11,21 +11,21 @@ using System.Threading.Tasks;
 
 namespace PBO_Projek.Controller
 {
-    public class C_HomepageOwner : Connector
+    public class C_Homepage : Connector
     {
         private string connectionString = "Host=localhost;Database=MekanikHunter;Username=postgres;Password=123";
         string title = "Mekanik Hunter";
-        C_HomepageOwner Controller;
+        C_Homepage Controller;
         public HomepageOwner homepageOwner;
-        public V_ManagementTeknisi V_ManagementTeknisi;
+        public V_ManagementTeknisiDanKasir V_ManagementTeknisi;
         public V_SukuCadang V_sukuCadang;
         public V_RiwayatTransaksi V_riwayatTransaksi;
         public V_TambahLayanan V_Tambahlayanan;
 
-        public C_HomepageOwner(HomepageOwner homepageowner)
+        public C_Homepage(HomepageOwner homepageowner)
         {
             this.homepageOwner = homepageowner;
-            V_ManagementTeknisi = new V_ManagementTeknisi(this);
+            V_ManagementTeknisi = new V_ManagementTeknisiDanKasir(this);
             V_sukuCadang = new V_SukuCadang(this);
             V_riwayatTransaksi = new V_RiwayatTransaksi(this);
             V_Tambahlayanan = new V_TambahLayanan(this);
@@ -93,6 +93,21 @@ namespace PBO_Projek.Controller
                 }
             }
 
+        }
+
+        public void AddLayanan(string namalayanan, decimal harlay)
+        {
+            string query = @" INSERT INTO Data_Layanan (Nama_Layanan, Harga_Layanan) VALUES (:Nama_Layanan, :Harga_Layanan); ";
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue(":Nama_Layanan", namalayanan);
+                    cmd.Parameters.AddWithValue(":Harga_Layanan", harlay);
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
         public void Execute_No_Return(NpgsqlCommand cmd)
         {

@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace PBO_Projek.Views.Homepage
 {
-    public partial class V_ManagementTeknisi : UserControl
+    public partial class V_ManagementTeknisiDanKasir : UserControl
     {
-        C_HomepageOwner Controller;
+        C_Homepage Controller;
         private string connectionString = "Host=localhost;Database=MekanikHunter;Username=postgres;Password=123";
         string title = "Mekanik Hunter";
 
-        public V_ManagementTeknisi(C_HomepageOwner controller)
+        public V_ManagementTeknisiDanKasir(C_Homepage controller)
         {
             InitializeComponent();
             Controller = controller;
@@ -89,8 +89,9 @@ namespace PBO_Projek.Views.Homepage
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            FormDataKasir kasir = new FormDataKasir(Controller);
+            FormDataKasir kasir = new FormDataKasir(Controller, false);
             kasir.ShowDialog();
+            dgvdatakasir();
         }
 
         public void dgvteknisi()
@@ -123,7 +124,7 @@ namespace PBO_Projek.Views.Homepage
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, title);
             }
         }
 
@@ -213,11 +214,13 @@ namespace PBO_Projek.Views.Homepage
             string colName = dgvKasir.Columns[e.ColumnIndex].Name;
             if (colName == "Edit")
             {
-                FormDataKasir kasir = new FormDataKasir(Controller);
+                FormDataKasir kasir = new FormDataKasir(Controller, true);
                 kasir.lblEid.Text = dgvKasir.Rows[e.RowIndex].Cells[1].Value.ToString();
                 kasir.txtNamaKas.Text = dgvKasir.Rows[e.RowIndex].Cells[2].Value.ToString();
                 kasir.txtUserKas.Text = dgvKasir.Rows[e.RowIndex].Cells[3].Value.ToString();
                 kasir.txtPassKas.Text = dgvKasir.Rows[e.RowIndex].Cells[4].Value.ToString();
+
+
                 kasir.ShowDialog();
                 dgvdatakasir();
 

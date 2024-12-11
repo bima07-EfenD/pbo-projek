@@ -1,6 +1,6 @@
 ﻿namespace PBO_Projek.Views.Homepage
 {
-    partial class V_ManagementTeknisi
+    partial class V_ManagementTeknisiDanKasir
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_ManagementTeknisi));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_ManagementTeknisiDanKasir));
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             dgvManagement = new DataGridView();
             Coloumn1 = new DataGridViewTextBoxColumn();

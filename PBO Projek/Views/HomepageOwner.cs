@@ -14,11 +14,11 @@ namespace PBO_Projek.Views
 {
     public partial class HomepageOwner : Form
     {
-        C_HomepageOwner Controller;
+        C_Homepage Controller;
         public HomepageOwner()
         {
             InitializeComponent();
-            Controller = new C_HomepageOwner(this);
+            Controller = new C_Homepage(this);
         }
 
         private void HomepageOwner_Load(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace PBO_Projek.Views
         {
             panelSlide.Height = button1.Height;
             panelSlide.Top = button1.Top;
-            Controller.V_ManagementTeknisi = new V_ManagementTeknisi(Controller);
+            Controller.V_ManagementTeknisi = new V_ManagementTeknisiDanKasir(Controller);
             Controller.SwitchView(Controller.V_ManagementTeknisi);
         }
 
@@ -84,7 +84,10 @@ namespace PBO_Projek.Views
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            panelSlide.Height = button4.Height;
+            panelSlide.Top = button4.Top;
+            Controller.V_Tambahlayanan = new V_TambahLayanan(Controller);
+            Controller.SwitchView(Controller.V_Tambahlayanan);
         }
     }
 }

@@ -14,10 +14,10 @@ namespace PBO_Projek.Views
 {
     public partial class FormSukuCadang : Form
     {
-        C_HomepageOwner Controller;
+        C_Homepage Controller;
         String title = "Mekanik Hunter";
         bool cek = false;
-        public FormSukuCadang(C_HomepageOwner controller)
+        public FormSukuCadang(C_Homepage controller)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -70,7 +70,7 @@ namespace PBO_Projek.Views
                     MessageBox.Show(ex.Message, title);
                 }
             }
-           
+
         }
         public void Clear()
         {
@@ -88,6 +88,31 @@ namespace PBO_Projek.Views
                 return;
             }
             cek = true;
+        }
+
+        private void txtHarSuk_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtHarSuk_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtStok_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

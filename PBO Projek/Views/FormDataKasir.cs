@@ -15,14 +15,30 @@ namespace PBO_Projek.Views
 {
     public partial class FormDataKasir : Form
     {
-        C_HomepageOwner Controller;
+        C_Homepage Controller;
+        private bool isEditing;
         String title = "Mekanik Hunter";
         bool cek = false;
-        public FormDataKasir(C_HomepageOwner controller)
+
+        public FormDataKasir(C_Homepage controller, bool isEditing = false)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             Controller = controller;
+            this.isEditing = isEditing;
+            SetButtonStatus();
+        }
+
+        private void SetButtonStatus() 
+        { 
+            if (isEditing) 
+            { 
+                btnSave.Enabled = false; btnUpdate.Enabled = true; 
+            }
+            else 
+            {
+                btnSave.Enabled = true; btnUpdate.Enabled = false; 
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)

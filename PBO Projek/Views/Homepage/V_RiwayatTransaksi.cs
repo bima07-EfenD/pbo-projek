@@ -13,8 +13,8 @@ namespace PBO_Projek.Views.Homepage
 {
     public partial class V_RiwayatTransaksi : UserControl
     {
-        C_HomepageOwner Controller;
-        public V_RiwayatTransaksi(C_HomepageOwner controller)
+        C_Homepage Controller;
+        public V_RiwayatTransaksi(C_Homepage controller)
         {
             InitializeComponent();
             Controller = controller;

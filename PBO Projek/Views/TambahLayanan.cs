@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PBO_Projek.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,14 +15,29 @@ namespace PBO_Projek.Views
     public partial class TambahLayanan : Form
     {
         String title = "Mekanik Hunter";
+        private bool IsEditing;
         bool cek = false;
-        public TambahLayanan()
+        C_Homepage Controller;
+        public TambahLayanan(C_Homepage controller, bool isEditing)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-
+            Controller = controller;
+            this.IsEditing = isEditing;
+            SetButtonStatus();
         }
 
+        private void SetButtonStatus()
+        {
+            if (IsEditing)
+            {
+                button2.Enabled = false; button3.Enabled = true;
+            }
+            else
+            {
+                button2.Enabled = true; button3.Enabled = false;
+            }
+        }
         private void TambahLayanan_Load(object sender, EventArgs e)
         {
 
@@ -34,28 +50,34 @@ namespace PBO_Projek.Views
 
         private void button2_Click(object sender, EventArgs e)
         {
-            try
+            string namalayanan = txtLayanan.Text;
+            decimal harlay;
+            bool harga = decimal.TryParse(txtHarLay.Text, out harlay);
+            if (harga)
             {
-                cekkosong();
-                if (cek)
+                try
                 {
-                    if (MessageBox.Show("Apakah anda yakin ingin menambah?", "Tambah Teknisi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    cekkosong();
+                    if (cek)
                     {
-                        MessageBox.Show("Data Teknisi Berhasil Ditambah", title);
-                        Clear();
-                        cek = false;
+                        Controller.AddLayanan(namalayanan, harlay);
+                        if (MessageBox.Show("Apakah anda yakin ingin menambah?", "Tambah Teknisi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            MessageBox.Show("Data Layanan Berhasil Ditambah", title);
+                            Clear();
+                            cek = false;
+                        }
+
                     }
 
                 }
+                catch (Exception ex)
+                {
 
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message, title);
+                    MessageBox.Show(ex.Message, title);
+                }
             }
         }
-
         public void Clear()
         {
             txtLayanan.Clear();
@@ -71,6 +93,23 @@ namespace PBO_Projek.Views
                 return;
             }
             cek = true;
+        }
+
+        private void txtHarLay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

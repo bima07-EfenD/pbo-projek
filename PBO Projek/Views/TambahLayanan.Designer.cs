@@ -38,6 +38,7 @@
             button2 = new Button();
             button3 = new Button();
             btnBack = new Button();
+            lblid = new Label();
             SuspendLayout();
             // 
             // panel1
@@ -91,6 +92,7 @@
             txtHarLay.Name = "txtHarLay";
             txtHarLay.Size = new Size(527, 27);
             txtHarLay.TabIndex = 5;
+            txtHarLay.KeyPress += txtHarLay_KeyPress;
             // 
             // button2
             // 
@@ -116,6 +118,7 @@
             button3.TabIndex = 8;
             button3.Text = "Update";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // btnBack
             // 
@@ -131,11 +134,21 @@
             btnBack.UseVisualStyleBackColor = false;
             btnBack.Click += btnBack_Click;
             // 
+            // lblid
+            // 
+            lblid.AutoSize = true;
+            lblid.Location = new Point(15, 205);
+            lblid.Name = "lblid";
+            lblid.Size = new Size(30, 20);
+            lblid.TabIndex = 26;
+            lblid.Text = "Eid";
+            // 
             // TambahLayanan
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(708, 255);
+            Controls.Add(lblid);
             Controls.Add(btnBack);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -159,10 +172,11 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox txtLayanan;
-        private TextBox txtHarLay;
         private Button button2;
         private Button button3;
         private Button btnBack;
+        public Label lblid;
+        public TextBox txtLayanan;
+        public TextBox txtHarLay;
     }
 }
