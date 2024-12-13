@@ -70,6 +70,7 @@
             dgvManagement.AllowUserToResizeColumns = false;
             dgvManagement.AllowUserToResizeRows = false;
             dgvManagement.BackgroundColor = Color.White;
+            dgvManagement.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvManagement.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.LimeGreen;

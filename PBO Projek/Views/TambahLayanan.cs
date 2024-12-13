@@ -1,4 +1,5 @@
 ﻿using PBO_Projek.Controller;
+using PBO_Projek.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +10,7 @@ using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace PBO_Projek.Views
 {
@@ -17,8 +19,8 @@ namespace PBO_Projek.Views
         String title = "Mekanik Hunter";
         private bool IsEditing;
         bool cek = false;
-        C_Homepage Controller;
-        public TambahLayanan(C_Homepage controller, bool isEditing)
+        C_Layanan Controller;
+        public TambahLayanan(C_Layanan controller, bool isEditing)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -40,7 +42,7 @@ namespace PBO_Projek.Views
         }
         private void TambahLayanan_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -60,7 +62,7 @@ namespace PBO_Projek.Views
                     cekkosong();
                     if (cek)
                     {
-                        Controller.AddLayanan(namalayanan, harlay);
+                        Controller.addLayanan(namalayanan, harlay);
                         if (MessageBox.Show("Apakah anda yakin ingin menambah?", "Tambah Teknisi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
                             MessageBox.Show("Data Layanan Berhasil Ditambah", title);
@@ -109,7 +111,38 @@ namespace PBO_Projek.Views
 
         private void button3_Click(object sender, EventArgs e)
         {
+            int Idlayanan;
+            string namaLayanan = txtLayanan.Text;
+            decimal harlay;
+            try
+            {
+                if(int.TryParse(lblid.Text, out Idlayanan)) 
+                {
+                    if (decimal.TryParse(txtHarLay.Text, out harlay))
+                    {
+                        cekkosong();
+                        if (cek)
+                        {
+                            if (MessageBox.Show("Apakah anda yakin ingin mengedit?", "Edit Kasir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            {
+                                Controller.editLayanan(Idlayanan, namaLayanan, harlay);
+                                MessageBox.Show("Data Layanan Berhasil Diedit", title);
+                                Clear();
+                                this.Dispose();
 
+                            }
+
+                        }
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, title);
+            }
         }
+
     }
 }

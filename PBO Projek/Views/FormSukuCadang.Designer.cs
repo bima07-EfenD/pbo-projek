@@ -40,6 +40,8 @@
             panel1 = new Panel();
             label4 = new Label();
             txtStok = new TextBox();
+            comboBox1 = new ComboBox();
+            label5 = new Label();
             SuspendLayout();
             // 
             // btnBack
@@ -61,7 +63,7 @@
             button3.BackColor = Color.FromArgb(255, 255, 128);
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
-            button3.Location = new Point(487, 192);
+            button3.Location = new Point(487, 236);
             button3.Name = "button3";
             button3.Size = new Size(94, 29);
             button3.TabIndex = 33;
@@ -73,7 +75,7 @@
             button2.BackColor = Color.FromArgb(128, 255, 128);
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(354, 192);
+            button2.Location = new Point(354, 236);
             button2.Name = "button2";
             button2.Size = new Size(94, 29);
             button2.TabIndex = 32;
@@ -153,11 +155,31 @@
             txtStok.TabIndex = 36;
             txtStok.KeyPress += txtStok_KeyPress;
             // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(157, 193);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(182, 28);
+            comboBox1.TabIndex = 37;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(5, 198);
+            label5.Name = "label5";
+            label5.Size = new Size(73, 20);
+            label5.TabIndex = 38;
+            label5.Text = "Kategori :";
+            label5.Click += label5_Click;
+            // 
             // FormSukuCadang
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(621, 245);
+            ClientSize = new Size(621, 285);
+            Controls.Add(label5);
+            Controls.Add(comboBox1);
             Controls.Add(txtStok);
             Controls.Add(label4);
             Controls.Add(btnBack);
@@ -190,5 +212,7 @@
         private Panel panel1;
         private Label label4;
         private TextBox txtStok;
+        private ComboBox comboBox1;
+        private Label label5;
     }
 }

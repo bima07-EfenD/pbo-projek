@@ -62,6 +62,7 @@ namespace PBO_Projek.Core
     CREATE TABLE IF NOT EXISTS Data_Suku_Cadang (
          Id_Suku_Cadang SERIAL PRIMARY KEY,
          Nama_Suku_Cadang VARCHAR(100) NOT NULL,
+         Kategori VARCHAR(50) ,
          Stok INT NOT NULL,
            Harga DECIMAL(10, 2) NOT NULL
     );

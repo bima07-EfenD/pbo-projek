@@ -114,5 +114,10 @@ namespace PBO_Projek.Views
                 e.Handled = true;
             }
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

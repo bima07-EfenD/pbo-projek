@@ -1,5 +1,6 @@
 ﻿using Npgsql;
 using PBO_Projek.Controller;
+using PBO_Projek.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace PBO_Projek.Views.Homepage
     public partial class V_ManagementTeknisiDanKasir : UserControl
     {
         C_Homepage Controller;
+        C_ManagementTeknisiDanKasir C_management;
         private string connectionString = "Host=localhost;Database=MekanikHunter;Username=postgres;Password=123";
         string title = "Mekanik Hunter";
 
@@ -22,13 +24,14 @@ namespace PBO_Projek.Views.Homepage
         {
             InitializeComponent();
             Controller = controller;
-            dgvteknisi();
-            dgvdatakasir();
+            C_management = new C_ManagementTeknisiDanKasir(Controller, this);
+
         }
 
         private void V_ManagementTeknisi_Load(object sender, EventArgs e)
         {
-
+            dgvteknisi();
+            dgvdatakasir();
         }
 
         private void dgvManagement_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -36,30 +39,18 @@ namespace PBO_Projek.Views.Homepage
             string colName = dgvManagement.Columns[e.ColumnIndex].Name;
             if (colName == "Delete")
             {
-                try
+                try 
                 {
-                    if (MessageBox.Show("Yakin ingin menghapus ?", "Hapus Teknisi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("Yakin ingin menghapus?", "Hapus Teknisi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) 
                     {
                         int idTeknisi = Convert.ToInt32(dgvManagement.Rows[e.RowIndex].Cells["Column1"].Value);
-                        string query = "DELETE FROM data_teknisi WHERE Id_Teknisi = @Column1";
-
-                        using (var conn = new NpgsqlConnection(connectionString))
-                        {
-                            conn.Open();
-                            using (var cmd = new NpgsqlCommand(query, conn))
-                            {
-                                cmd.Parameters.AddWithValue("@Column1", idTeknisi);
-                                cmd.ExecuteNonQuery();
-                            }
-                        }
-                        MessageBox.Show("Data teknisi berhasil dihapus!", title);
-                        dgvteknisi();
-
-                    }
-                }
-                catch (Exception ex)
+                        C_management.DeleteTeknisi(idTeknisi); 
+                        MessageBox.Show("Data teknisi berhasil dihapus!", title); 
+                        dgvteknisi(); 
+                    } 
+                } 
+                catch (Exception ex) 
                 {
-
                     MessageBox.Show(ex.Message, title);
                 }
             }
@@ -77,7 +68,7 @@ namespace PBO_Projek.Views.Homepage
 
         private void button1_Click(object sender, EventArgs e)
         {
-            TambahTeknisi tambahProduk = new TambahTeknisi(Controller);
+            TambahTeknisi tambahProduk = new TambahTeknisi(C_management);
             tambahProduk.ShowDialog();
             dgvteknisi();
         }
@@ -89,7 +80,7 @@ namespace PBO_Projek.Views.Homepage
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            FormDataKasir kasir = new FormDataKasir(Controller, false);
+            FormDataKasir kasir = new FormDataKasir(C_management, false);
             kasir.ShowDialog();
             dgvdatakasir();
         }
@@ -99,26 +90,69 @@ namespace PBO_Projek.Views.Homepage
             try
             {
                 dgvManagement.Rows.Clear();
-                string query = "SELECT Id_Teknisi, Nama_Teknisi FROM Data_Teknisi";
-                using (var conn = new NpgsqlConnection(connectionString))
+                var teknisiList = C_management.GetDataTeknisi();
+                if (teknisiList != null && teknisiList.Count > 0)
                 {
-                    conn.Open();
-                    using (var cmd = new NpgsqlCommand(query, conn))
+                    int no = 1;
+                    foreach (var teknisi in teknisiList)
                     {
-                        DataTable dataTable = new DataTable();
-                        dataTable.Load(cmd.ExecuteReader());
-                        dataTable.Columns.Add("No", typeof(int));
-                        for (int i = 0; i < dataTable.Rows.Count; i++)
-                        {
-                            dataTable.Rows[i]["No"] = i + 1;
-                        }
-                        dgvManagement.Rows.Clear();
-                        foreach (DataRow row in dataTable.Rows)
-                        {
-                            dgvManagement.Rows.Add(row["No"], row["Id_Teknisi"], row["Nama_Teknisi"]);
-                        }
-
+                        dgvManagement.Rows.Add(no++, teknisi.Id_Teknisi, teknisi.Nama_Teknisi);
                     }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, title);
+            }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                dgvManagement.Rows.Clear();
+                DataTable dataTable = C_management.SearchTeknisi(txtSearch.Text);
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    dgvManagement.Rows.Add(row["No"], row["Id_Teknisi"], row["Nama_Teknisi"]);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, title);
+            }
+        }
+        public void dgvdatakasir()
+        {
+            try
+            {
+                dgvKasir.Rows.Clear();
+                var kasirlist = C_management.GetDataKasir();
+                if (kasirlist != null && kasirlist.Count > 0)
+                {
+                    int no = 1;
+                    foreach (var kasir in kasirlist)
+                    {
+                        dgvKasir.Rows.Add(no++, kasir.Id_Kasir, kasir.Nama_Kasir, kasir.Username, kasir.Password );
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, title);
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                dgvKasir.Rows.Clear();
+                DataTable dataTable = C_management.SearchKasir(txtsKas.Text);
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    dgvKasir.Rows.Add(row["No"], row["Id_Kasir"], row["Nama_Kasir"], row["Username"], row["Password"]);
                 }
             }
             catch (Exception ex)
@@ -128,93 +162,12 @@ namespace PBO_Projek.Views.Homepage
             }
         }
 
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            string query = "SELECT Id_Teknisi, Nama_Teknisi FROM Data_Teknisi WHERE Nama_Teknisi LIKE @searchText";
-            using (var conn = new NpgsqlConnection(connectionString))
-            {
-                conn.Open(); using (var cmd = new NpgsqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@searchText", "%" + txtSearch.Text + "%");
-                    DataTable dataTable = new DataTable();
-                    dataTable.Load(cmd.ExecuteReader());
-                    dataTable.Columns.Add("No", typeof(int));
-                    for (int i = 0; i < dataTable.Rows.Count; i++)
-                    {
-                        dataTable.Rows[i]["No"] = i + 1;
-                    }
-                    dgvManagement.Rows.Clear();
-                    foreach (DataRow row in dataTable.Rows)
-                    {
-                        dgvManagement.Rows.Add(row["No"], row["Id_Teknisi"], row["Nama_Teknisi"]);
-                    }
-                }
-            }
-        }
-        public void dgvdatakasir()
-        {
-            try
-            {
-                dgvKasir.Rows.Clear();
-                string query = "SELECT id_kasir, nama_kasir, username, password FROM data_kasir";
-                using (var conn = new NpgsqlConnection(connectionString))
-                {
-                    conn.Open();
-                    using (var cmd = new NpgsqlCommand(query, conn))
-                    {
-                        DataTable dataTable = new DataTable();
-                        dataTable.Load(cmd.ExecuteReader());
-                        dataTable.Columns.Add("No", typeof(int));
-                        for (int i = 0; i < dataTable.Rows.Count; i++)
-                        {
-                            dataTable.Rows[i]["No"] = i + 1;
-                        }
-                        dgvKasir.Rows.Clear();
-                        foreach (DataRow row in dataTable.Rows)
-                        {
-                            dgvKasir.Rows.Add(row["No"], row["Id_Kasir"], row["Nama_Kasir"], row["Username"], row["Password"]);
-                        }
-
-                    }
-                }
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            string query = "SELECT Id_Kasir, Nama_Kasir, Username, Password FROM Data_Kasir WHERE Nama_Kasir LIKE @searchText";
-            using (var conn = new NpgsqlConnection(connectionString))
-            {
-                conn.Open(); using (var cmd = new NpgsqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@searchText", "%" + txtsKas.Text + "%");
-                    DataTable dataTable = new DataTable();
-                    dataTable.Load(cmd.ExecuteReader());
-                    dataTable.Columns.Add("No", typeof(int));
-                    for (int i = 0; i < dataTable.Rows.Count; i++)
-                    {
-                        dataTable.Rows[i]["No"] = i + 1;
-                    }
-                    dgvKasir.Rows.Clear();
-                    foreach (DataRow row in dataTable.Rows)
-                    {
-                        dgvKasir.Rows.Add(row["No"], row["Id_Kasir"], row["Nama_Kasir"], row["Username"], row["Password"]);
-                    }
-                }
-            }
-        }
-
-        private void dgvKasir_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    private void dgvKasir_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string colName = dgvKasir.Columns[e.ColumnIndex].Name;
             if (colName == "Edit")
             {
-                FormDataKasir kasir = new FormDataKasir(Controller, true);
+                FormDataKasir kasir = new FormDataKasir(C_management, true);
                 kasir.lblEid.Text = dgvKasir.Rows[e.RowIndex].Cells[1].Value.ToString();
                 kasir.txtNamaKas.Text = dgvKasir.Rows[e.RowIndex].Cells[2].Value.ToString();
                 kasir.txtUserKas.Text = dgvKasir.Rows[e.RowIndex].Cells[3].Value.ToString();

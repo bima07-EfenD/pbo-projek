@@ -16,22 +16,24 @@ namespace PBO_Projek.Views.Homepage
     {
         private string connectionString = "Host=localhost;Database=MekanikHunter;Username=postgres;Password=123";
         C_Homepage Controller;
+        C_Layanan ctrl;
         string title = "Mekanik Hunter";
         public V_TambahLayanan(C_Homepage controller)
         {
             InitializeComponent();
             Controller = controller;
-            dgvlayanan();
+            ctrl = new C_Layanan(Controller, this);
+
         }
 
         private void V_TambahLayanan_Load(object sender, EventArgs e)
         {
-
+            dgvlayanan();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            TambahLayanan tambahLayanan = new TambahLayanan(Controller, false);
+            TambahLayanan tambahLayanan = new TambahLayanan(ctrl, false);
             tambahLayanan.ShowDialog();
             dgvlayanan();
         }
@@ -63,29 +65,17 @@ namespace PBO_Projek.Views.Homepage
         {
             try
             {
-
                 dgvLay.Rows.Clear();
-                string query = "SELECT Id_Layanan, Nama_Layanan, Harga_Layanan FROM Data_Layanan";
-                using (var conn = new NpgsqlConnection(connectionString))
+                var layananlist = ctrl.GetDataLayanan();
+                if (layananlist != null && layananlist.Count > 0)
                 {
-                    conn.Open();
-                    using (var cmd = new NpgsqlCommand(query, conn))
+                    int no = 1;
+                    foreach (var layanan in layananlist)
                     {
-                        DataTable dataTable = new DataTable();
-                        dataTable.Load(cmd.ExecuteReader());
-                        dataTable.Columns.Add("No", typeof(int));
-                        for (int i = 0; i < dataTable.Rows.Count; i++)
-                        {
-                            dataTable.Rows[i]["No"] = i + 1;
-                        }
-                        dgvLay.Rows.Clear();
-                        foreach (DataRow row in dataTable.Rows)
-                        {
-                            dgvLay.Rows.Add(row["No"], row["Id_Layanan"], row["Nama_Layanan"], row["Harga_Layanan"]);
-                        }
-
+                        dgvLay.Rows.Add(no++, layanan.Id_Layanan, layanan.Nama_Layanan, layanan.Harga_Layanan);
                     }
                 }
+                
             }
             catch (Exception ex)
             {
@@ -99,11 +89,12 @@ namespace PBO_Projek.Views.Homepage
             string colName = dgvLay.Columns[e.ColumnIndex].Name;
             if (colName == "Edit")
             {
-                TambahLayanan layanan = new TambahLayanan(Controller, true);
+                TambahLayanan layanan = new TambahLayanan(ctrl, true);
                 layanan.lblid.Text = dgvLay.Rows[e.RowIndex].Cells[1].Value.ToString();
                 layanan.txtLayanan.Text = dgvLay.Rows[e.RowIndex].Cells[2].Value.ToString();
                 layanan.txtHarLay.Text = dgvLay.Rows[e.RowIndex].Cells[3].Value.ToString();
                 layanan.ShowDialog();
+                dgvlayanan();
 
             }
         }

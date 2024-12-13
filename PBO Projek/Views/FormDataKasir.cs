@@ -15,12 +15,12 @@ namespace PBO_Projek.Views
 {
     public partial class FormDataKasir : Form
     {
-        C_Homepage Controller;
+        C_ManagementTeknisiDanKasir Controller;
         private bool isEditing;
         String title = "Mekanik Hunter";
         bool cek = false;
 
-        public FormDataKasir(C_Homepage controller, bool isEditing = false)
+        public FormDataKasir(C_ManagementTeknisiDanKasir controller, bool isEditing = false)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;

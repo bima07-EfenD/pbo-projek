@@ -13,10 +13,10 @@ namespace PBO_Projek.Views
 {
     public partial class TambahTeknisi : Form
     {
-        C_Homepage Controller;
+        C_ManagementTeknisiDanKasir Controller;
         String title = "Mekanik Hunter";
         bool cek = false;
-        public TambahTeknisi(C_Homepage controller)
+        public TambahTeknisi(C_ManagementTeknisiDanKasir controller)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -39,7 +39,7 @@ namespace PBO_Projek.Views
                 {
                     if (MessageBox.Show("Apakah anda yakin ingin menambah?", "Tambah Teknisi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        Controller.AddTeknisi(namaTeknisi);
+                        Controller.AddTeknisi (namaTeknisi);
                         MessageBox.Show("Data Teknisi Berhasil Ditambah", title);
                         Clear();
                         cek = false;
