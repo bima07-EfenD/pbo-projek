@@ -59,12 +59,20 @@ namespace PBO_Projek.Core
     ");
 
             Execute_No_Return(@"
+    CREATE TABLE IF NOT EXISTS Kategori_Suku_Cadang (
+        Id_Kategori SERIAL PRIMARY KEY,
+        Nama_Kategori VARCHAR(100) NOT NULL
+    );
+    ");
+
+            Execute_No_Return(@"
     CREATE TABLE IF NOT EXISTS Data_Suku_Cadang (
          Id_Suku_Cadang SERIAL PRIMARY KEY,
          Nama_Suku_Cadang VARCHAR(100) NOT NULL,
-         Kategori VARCHAR(50) ,
+         Id_Kategori INT NOT NULL,
          Stok INT NOT NULL,
-           Harga DECIMAL(10, 2) NOT NULL
+         Harga DECIMAL(10, 2) NOT NULL,
+         FOREIGN KEY (Id_Kategori) REFERENCES Kategori_Suku_Cadang(Id_Kategori)
     );
     ");
 

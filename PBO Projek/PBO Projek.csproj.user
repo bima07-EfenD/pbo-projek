@@ -7,6 +7,9 @@
     <Compile Update="Views\FormSukuCadang.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\FormTambahKategori.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\HomepageOwner.cs">
       <SubType>Form</SubType>
     </Compile>
