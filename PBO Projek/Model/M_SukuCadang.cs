@@ -14,8 +14,6 @@ namespace PBO_Projek.Model
         [Required]
         public string Nama_Suku_Cadang { get; set; }
         [Required]
-        public string Kategori {  get; set; }
-        [Required]
         public int Stok {  get; set; }
         [Required]
         public decimal Harga { get; set; }

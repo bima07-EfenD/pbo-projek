@@ -14,10 +14,10 @@ namespace PBO_Projek.Views
 {
     public partial class FormSukuCadang : Form
     {
-        C_Homepage Controller;
+        C_SukuCadang Controller;
         String title = "Mekanik Hunter";
         bool cek = false;
-        public FormSukuCadang(C_Homepage controller)
+        public FormSukuCadang(C_SukuCadang controller)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -36,6 +36,10 @@ namespace PBO_Projek.Views
 
         private void FormSukuCadang_Load(object sender, EventArgs e)
         {
+            var kategorilist = Controller.GetDataKategori();
+            comboBox1.DataSource = kategorilist;
+            comboBox1.DisplayMember = "Nama_Kategori";
+            comboBox1.ValueMember = "Id_Kategori";
 
         }
 
@@ -116,6 +120,11 @@ namespace PBO_Projek.Views
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -69,10 +69,11 @@
             dgvSukuCadang.Dock = DockStyle.Top;
             dgvSukuCadang.EnableHeadersVisualStyles = false;
             dgvSukuCadang.Location = new Point(0, 0);
+            dgvSukuCadang.Margin = new Padding(4, 4, 4, 4);
             dgvSukuCadang.Name = "dgvSukuCadang";
             dgvSukuCadang.RowHeadersVisible = false;
             dgvSukuCadang.RowHeadersWidth = 51;
-            dgvSukuCadang.Size = new Size(708, 635);
+            dgvSukuCadang.Size = new Size(885, 794);
             dgvSukuCadang.TabIndex = 1;
             dgvSukuCadang.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -82,7 +83,7 @@
             Column1.HeaderText = "No";
             Column1.MinimumWidth = 6;
             Column1.Name = "Column1";
-            Column1.Width = 56;
+            Column1.Width = 70;
             // 
             // Column2
             // 
@@ -90,7 +91,7 @@
             Column2.HeaderText = "Id";
             Column2.MinimumWidth = 6;
             Column2.Name = "Column2";
-            Column2.Width = 49;
+            Column2.Width = 62;
             // 
             // Column3
             // 
@@ -126,9 +127,10 @@
             // 
             panel3.Controls.Add(panel4);
             panel3.Controls.Add(dgvSukuCadang);
-            panel3.Location = new Point(244, 210);
+            panel3.Location = new Point(305, 262);
+            panel3.Margin = new Padding(4, 4, 4, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(708, 491);
+            panel3.Size = new Size(885, 614);
             panel3.TabIndex = 4;
             // 
             // panel4
@@ -138,9 +140,10 @@
             panel4.Controls.Add(textBox1);
             panel4.Controls.Add(label2);
             panel4.Dock = DockStyle.Bottom;
-            panel4.Location = new Point(0, 441);
+            panel4.Location = new Point(0, 552);
+            panel4.Margin = new Padding(4, 4, 4, 4);
             panel4.Name = "panel4";
-            panel4.Size = new Size(708, 50);
+            panel4.Size = new Size(885, 62);
             panel4.TabIndex = 2;
             // 
             // button2
@@ -151,18 +154,20 @@
             button2.BackgroundImageLayout = ImageLayout.Stretch;
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(642, 10);
+            button2.Location = new Point(733, 12);
+            button2.Margin = new Padding(4, 4, 4, 4);
             button2.Name = "button2";
-            button2.Size = new Size(30, 30);
+            button2.Size = new Size(38, 38);
             button2.TabIndex = 2;
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(98, 13);
+            textBox1.Location = new Point(122, 16);
+            textBox1.Margin = new Padding(4, 4, 4, 4);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(168, 27);
+            textBox1.Size = new Size(209, 31);
             textBox1.TabIndex = 1;
             // 
             // label2
@@ -170,20 +175,22 @@
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(20, 15);
+            label2.Location = new Point(25, 19);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(72, 22);
+            label2.Size = new Size(86, 26);
             label2.TabIndex = 0;
             label2.Text = "Search";
             // 
             // V_SukuCadang
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             Controls.Add(panel3);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "V_SukuCadang";
-            Size = new Size(1185, 970);
+            Size = new Size(1481, 1212);
             Load += V_SukuCadang_Load;
             ((System.ComponentModel.ISupportInitialize)dgvSukuCadang).EndInit();
             panel3.ResumeLayout(false);

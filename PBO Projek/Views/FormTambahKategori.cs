@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PBO_Projek.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,13 +13,18 @@ namespace PBO_Projek.Views
 {
     public partial class FormTambahKategori : Form
     {
-        public FormTambahKategori()
+        C_SukuCadang Controller;
+
+        
+        public FormTambahKategori(C_SukuCadang controller)
         {
             InitializeComponent();
+            Controller = controller;
         }
 
         private void FormTambahKategori_Load(object sender, EventArgs e)
         {
+            var kategorilist = Controller.GetDataKategori();
 
         }
     }

@@ -14,15 +14,17 @@ namespace PBO_Projek.Views.Homepage
 {
     public partial class V_SukuCadang : UserControl
     {
-        private string connectionString = "Host=localhost;Database=MekanikHunter;Username=postgres;Password=123";
         C_Homepage Controller;
+        C_SukuCadang csuca;
         C_HomepageTeknisi _Controller;
         string title = "Mekanik Hunter";
         public V_SukuCadang(C_Homepage controller)
         {
             InitializeComponent();
             Controller = controller;
+            csuca = new C_SukuCadang(Controller, this);
             dgvsukucadang();
+
         }
         public V_SukuCadang(C_HomepageTeknisi controller)
         {
@@ -47,7 +49,7 @@ namespace PBO_Projek.Views.Homepage
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormSukuCadang sukuCadang = new FormSukuCadang(Controller);
+            FormSukuCadang sukuCadang = new FormSukuCadang(csuca);
             sukuCadang.ShowDialog();
         }
 
@@ -56,25 +58,13 @@ namespace PBO_Projek.Views.Homepage
             try
             {
                 dgvSukuCadang.Rows.Clear();
-                string query = "SELECT Id_Suku_Cadang, Nama_Suku_Cadang, Stok, Harga FROM Data_Suku_Cadang";
-                using (var conn = new NpgsqlConnection(connectionString))
+                var sukuCadangList = csuca.GetSukuCadang();
+                if (sukuCadangList != null && sukuCadangList.Count > 0)
                 {
-                    conn.Open();
-                    using (var cmd = new NpgsqlCommand(query, conn))
+                    int no = 1;
+                    foreach (var sukuCadang in sukuCadangList)
                     {
-                        DataTable dataTable = new DataTable();
-                        dataTable.Load(cmd.ExecuteReader());
-                        dataTable.Columns.Add("No", typeof(int));
-                        for (int i = 0; i < dataTable.Rows.Count; i++)
-                        {
-                            dataTable.Rows[i]["No"] = i + 1;
-                        }
-                        dgvSukuCadang.Rows.Clear();
-                        foreach (DataRow row in dataTable.Rows)
-                        {
-                            dgvSukuCadang.Rows.Add(row["No"], row["Id_Suku_Cadang"], row["Nama_Suku_Cadang"], row["Stok"], row["Harga"]);
-                        }
-
+                        dgvSukuCadang.Rows.Add(no++, sukuCadang.Id_Suku_Cadang, sukuCadang.Nama_Suku_Cadang, sukuCadang.Stok, sukuCadang.Harga );
                     }
                 }
             }
