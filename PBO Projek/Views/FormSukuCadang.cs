@@ -46,6 +46,7 @@ namespace PBO_Projek.Views
         private void button2_Click(object sender, EventArgs e)
         {
             string namaSukuCadang = txtSuku.Text;
+            int idKategori = (int)comboBox1.SelectedValue;
             int stok;
             decimal harga;
             bool stoknya = int.TryParse(txtStok.Text, out stok);
@@ -59,7 +60,7 @@ namespace PBO_Projek.Views
                     {
                         if (MessageBox.Show("Apakah anda yakin ingin menambah?", "Tambah Suku Cadang", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
-                            Controller.AddSuCa(namaSukuCadang, stok, harga);
+                            Controller.AddSuCa(namaSukuCadang,idKategori, stok, harga);
                             MessageBox.Show("Data Suku Cadang Berhasil Ditambah", title);
                             Clear();
                             cek = false;

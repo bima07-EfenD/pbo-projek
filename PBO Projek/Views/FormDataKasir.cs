@@ -29,15 +29,15 @@ namespace PBO_Projek.Views
             SetButtonStatus();
         }
 
-        private void SetButtonStatus() 
-        { 
-            if (isEditing) 
-            { 
-                btnSave.Enabled = false; btnUpdate.Enabled = true; 
-            }
-            else 
+        private void SetButtonStatus()
+        {
+            if (isEditing)
             {
-                btnSave.Enabled = true; btnUpdate.Enabled = false; 
+                btnSave.Enabled = false; btnUpdate.Enabled = true;
+            }
+            else
+            {
+                btnSave.Enabled = true; btnUpdate.Enabled = false;
             }
         }
 
@@ -79,7 +79,7 @@ namespace PBO_Projek.Views
                 {
                     MessageBox.Show("ID Kasir tidak valid.", title);
                 }
-                
+
 
             }
             catch (Exception ex)
@@ -134,6 +134,11 @@ namespace PBO_Projek.Views
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormDataKasir_Load(object sender, EventArgs e)
         {
 
         }

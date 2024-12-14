@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTambahKategori));
             btnSave = new Button();
-            txtNamaTek = new TextBox();
+            txtNamakategori = new TextBox();
             btnBack = new Button();
             label2 = new Label();
             pictureBox1 = new PictureBox();
@@ -47,21 +47,21 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSave.ImageAlign = ContentAlignment.BottomCenter;
-            btnSave.Location = new Point(160, 570);
-            btnSave.Margin = new Padding(4, 4, 4, 4);
+            btnSave.Location = new Point(128, 456);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(169, 68);
+            btnSave.Size = new Size(135, 54);
             btnSave.TabIndex = 36;
             btnSave.Text = "Tambah";
             btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
-            // txtNamaTek
+            // txtNamakategori
             // 
-            txtNamaTek.Location = new Point(179, 415);
-            txtNamaTek.Margin = new Padding(4, 4, 4, 4);
-            txtNamaTek.Name = "txtNamaTek";
-            txtNamaTek.Size = new Size(244, 31);
-            txtNamaTek.TabIndex = 35;
+            txtNamakategori.Location = new Point(143, 332);
+            txtNamakategori.Name = "txtNamakategori";
+            txtNamakategori.Size = new Size(196, 27);
+            txtNamakategori.TabIndex = 35;
+            txtNamakategori.TextChanged += txtNamaTek_TextChanged;
             // 
             // btnBack
             // 
@@ -70,10 +70,9 @@
             btnBack.BackgroundImageLayout = ImageLayout.Stretch;
             btnBack.FlatAppearance.BorderSize = 0;
             btnBack.FlatStyle = FlatStyle.Flat;
-            btnBack.Location = new Point(16, 62);
-            btnBack.Margin = new Padding(4, 4, 4, 4);
+            btnBack.Location = new Point(13, 50);
             btnBack.Name = "btnBack";
-            btnBack.Size = new Size(38, 38);
+            btnBack.Size = new Size(30, 30);
             btnBack.TabIndex = 34;
             btnBack.UseVisualStyleBackColor = false;
             // 
@@ -81,20 +80,18 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Historic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(22, 420);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(18, 336);
             label2.Name = "label2";
-            label2.Size = new Size(139, 25);
+            label2.Size = new Size(117, 20);
             label2.TabIndex = 33;
             label2.Text = "Nama Kategori :";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(164, 134);
-            pictureBox1.Margin = new Padding(4, 4, 4, 4);
+            pictureBox1.Location = new Point(131, 107);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(165, 89);
+            pictureBox1.Size = new Size(132, 71);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 32;
             pictureBox1.TabStop = false;
@@ -103,10 +100,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(91, 260);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(73, 208);
             label1.Name = "label1";
-            label1.Size = new Size(292, 39);
+            label1.Size = new Size(245, 34);
             label1.TabIndex = 31;
             label1.Text = "Tambah Kategori";
             // 
@@ -115,25 +111,23 @@
             panel1.BackColor = Color.Black;
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(4, 4, 4, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(492, 49);
+            panel1.Size = new Size(394, 39);
             panel1.TabIndex = 30;
             // 
             // FormTambahKategori
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(492, 712);
+            ClientSize = new Size(394, 570);
             Controls.Add(btnSave);
-            Controls.Add(txtNamaTek);
+            Controls.Add(txtNamakategori);
             Controls.Add(btnBack);
             Controls.Add(label2);
             Controls.Add(pictureBox1);
             Controls.Add(label1);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 4, 4, 4);
             Name = "FormTambahKategori";
             Text = "FormTambahKategori";
             Load += FormTambahKategori_Load;
@@ -145,7 +139,7 @@
         #endregion
 
         private Button btnSave;
-        private TextBox txtNamaTek;
+        private TextBox txtNamakategori;
         private Button btnBack;
         private Label label2;
         private PictureBox pictureBox1;

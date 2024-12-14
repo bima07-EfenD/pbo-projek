@@ -11,12 +11,20 @@ namespace PBO_Projek.Model
     {
         [Key]
         public int Id_Suku_Cadang { get; set; }
+
         [Required]
         public string Nama_Suku_Cadang { get; set; }
+
         [Required]
-        public int Stok {  get; set; }
+        public int Stok { get; set; }
+
         [Required]
         public decimal Harga { get; set; }
 
+        [Required]
+        public int Id_Kategori { get; set; }
+
+        public string Nama_Kategori { get; set; } 
     }
+
 }

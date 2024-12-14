@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_ManagementTeknisiDanKasir));
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             dgvManagement = new DataGridView();
             Coloumn1 = new DataGridViewTextBoxColumn();
             Column1 = new DataGridViewTextBoxColumn();
@@ -69,17 +69,17 @@
             dgvManagement.AllowUserToDeleteRows = false;
             dgvManagement.AllowUserToResizeColumns = false;
             dgvManagement.AllowUserToResizeRows = false;
-            dgvManagement.BackgroundColor = Color.White;
             dgvManagement.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvManagement.BackgroundColor = Color.White;
             dgvManagement.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.LimeGreen;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvManagement.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.LimeGreen;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvManagement.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvManagement.ColumnHeadersHeight = 35;
             dgvManagement.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvManagement.Columns.AddRange(new DataGridViewColumn[] { Coloumn1, Column1, Column2, Delete });
@@ -153,9 +153,9 @@
             button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(434, 10);
+            button1.Location = new Point(343, 12);
             button1.Name = "button1";
-            button1.Size = new Size(30, 30);
+            button1.Size = new Size(122, 30);
             button1.TabIndex = 2;
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
@@ -222,9 +222,9 @@
             button2.BackgroundImageLayout = ImageLayout.Stretch;
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(424, 10);
+            button2.Location = new Point(343, 10);
             button2.Name = "button2";
-            button2.Size = new Size(30, 30);
+            button2.Size = new Size(122, 30);
             button2.TabIndex = 3;
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click_1;
@@ -256,14 +256,14 @@
             dgvKasir.AllowUserToResizeRows = false;
             dgvKasir.BackgroundColor = Color.White;
             dgvKasir.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.LimeGreen;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvKasir.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.LimeGreen;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvKasir.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvKasir.ColumnHeadersHeight = 35;
             dgvKasir.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvKasir.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, Column4, Password, Edit, Hapus });
@@ -334,13 +334,13 @@
             Hapus.Name = "Hapus";
             Hapus.Width = 6;
             // 
-            // V_ManagementTeknisi
+            // V_ManagementTeknisiDanKasir
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panel3);
             Controls.Add(panel1);
-            Name = "V_ManagementTeknisi";
+            Name = "V_ManagementTeknisiDanKasir";
             Size = new Size(1185, 970);
             Load += V_ManagementTeknisi_Load;
             ((System.ComponentModel.ISupportInitialize)dgvManagement).EndInit();

@@ -74,9 +74,9 @@
             button2.BackgroundImageLayout = ImageLayout.Stretch;
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(849, 11);
+            button2.Location = new Point(762, 11);
             button2.Name = "button2";
-            button2.Size = new Size(30, 30);
+            button2.Size = new Size(122, 30);
             button2.TabIndex = 2;
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;

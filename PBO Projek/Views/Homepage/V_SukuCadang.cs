@@ -64,7 +64,7 @@ namespace PBO_Projek.Views.Homepage
                     int no = 1;
                     foreach (var sukuCadang in sukuCadangList)
                     {
-                        dgvSukuCadang.Rows.Add(no++, sukuCadang.Id_Suku_Cadang, sukuCadang.Nama_Suku_Cadang, sukuCadang.Stok, sukuCadang.Harga );
+                        dgvSukuCadang.Rows.Add(no++, sukuCadang.Nama_Suku_Cadang, sukuCadang.Nama_Kategori, sukuCadang.Stok, sukuCadang.Harga);
                     }
                 }
             }
@@ -73,6 +73,12 @@ namespace PBO_Projek.Views.Homepage
 
                 MessageBox.Show(ex.Message, title);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormTambahKategori kategori =  new FormTambahKategori(csuca);
+            kategori.ShowDialog();
         }
     }
 }

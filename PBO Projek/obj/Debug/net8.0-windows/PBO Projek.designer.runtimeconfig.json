@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\asus\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\asus\\.nuget\\packages"
+      "C:\\Users\\bimak\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\bimak\\.nuget\\packages"
     ],
     "configProperties": {
       "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": true,
