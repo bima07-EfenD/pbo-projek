@@ -31,22 +31,26 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_LayananServis));
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             label1 = new Label();
             label2 = new Label();
             panel3 = new Panel();
-            dataGridView1 = new DataGridView();
-            panel1 = new Panel();
-            dataGridView2 = new DataGridView();
+            dataGridViewLayanan = new DataGridView();
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
+            panel1 = new Panel();
+            dataGridViewSukuCadang = new DataGridView();
             dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             panel2 = new Panel();
-            dataGridView3 = new DataGridView();
+            dataGridViewPesanan = new DataGridView();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            Column1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            panel4 = new Panel();
+            label7 = new Label();
             comboBox1 = new ComboBox();
             comboBox2 = new ComboBox();
             textBox3 = new TextBox();
@@ -55,12 +59,18 @@
             label5 = new Label();
             label6 = new Label();
             comboBox3 = new ComboBox();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            label8 = new Label();
+            textBox4 = new TextBox();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewLayanan).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewSukuCadang).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewPesanan).BeginInit();
+            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // textBox1
@@ -97,20 +107,20 @@
             // 
             // panel3
             // 
-            panel3.Controls.Add(dataGridView1);
+            panel3.Controls.Add(dataGridViewLayanan);
             panel3.Location = new Point(40, 192);
             panel3.Name = "panel3";
             panel3.Size = new Size(351, 491);
             panel3.TabIndex = 4;
             // 
-            // dataGridView1
+            // dataGridViewLayanan
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AllowUserToResizeColumns = false;
-            dataGridView1.AllowUserToResizeRows = false;
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewLayanan.AllowUserToAddRows = false;
+            dataGridViewLayanan.AllowUserToDeleteRows = false;
+            dataGridViewLayanan.AllowUserToResizeColumns = false;
+            dataGridViewLayanan.AllowUserToResizeRows = false;
+            dataGridViewLayanan.BackgroundColor = Color.White;
+            dataGridViewLayanan.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = Color.LimeGreen;
             dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
@@ -118,54 +128,18 @@
             dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridView1.ColumnHeadersHeight = 35;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, Column4 });
-            dataGridView1.Dock = DockStyle.Top;
-            dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.Location = new Point(0, 0);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(351, 491);
-            dataGridView1.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(dataGridView2);
-            panel1.Location = new Point(408, 192);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(351, 491);
-            panel1.TabIndex = 5;
-            // 
-            // dataGridView2
-            // 
-            dataGridView2.AllowUserToAddRows = false;
-            dataGridView2.AllowUserToDeleteRows = false;
-            dataGridView2.AllowUserToResizeColumns = false;
-            dataGridView2.AllowUserToResizeRows = false;
-            dataGridView2.BackgroundColor = Color.White;
-            dataGridView2.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.LimeGreen;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridView2.ColumnHeadersHeight = 35;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn6, Column2 });
-            dataGridView2.Dock = DockStyle.Top;
-            dataGridView2.EnableHeadersVisualStyles = false;
-            dataGridView2.Location = new Point(0, 0);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersVisible = false;
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(351, 491);
-            dataGridView2.TabIndex = 1;
+            dataGridViewLayanan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewLayanan.ColumnHeadersHeight = 35;
+            dataGridViewLayanan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewLayanan.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, Column4 });
+            dataGridViewLayanan.Dock = DockStyle.Top;
+            dataGridViewLayanan.EnableHeadersVisualStyles = false;
+            dataGridViewLayanan.Location = new Point(0, 0);
+            dataGridViewLayanan.Name = "dataGridViewLayanan";
+            dataGridViewLayanan.RowHeadersVisible = false;
+            dataGridViewLayanan.RowHeadersWidth = 51;
+            dataGridViewLayanan.Size = new Size(351, 491);
+            dataGridViewLayanan.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -181,6 +155,42 @@
             Column4.MinimumWidth = 6;
             Column4.Name = "Column4";
             Column4.Width = 77;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(dataGridViewSukuCadang);
+            panel1.Location = new Point(408, 192);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(351, 491);
+            panel1.TabIndex = 5;
+            // 
+            // dataGridViewSukuCadang
+            // 
+            dataGridViewSukuCadang.AllowUserToAddRows = false;
+            dataGridViewSukuCadang.AllowUserToDeleteRows = false;
+            dataGridViewSukuCadang.AllowUserToResizeColumns = false;
+            dataGridViewSukuCadang.AllowUserToResizeRows = false;
+            dataGridViewSukuCadang.BackgroundColor = Color.White;
+            dataGridViewSukuCadang.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.LimeGreen;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dataGridViewSukuCadang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewSukuCadang.ColumnHeadersHeight = 35;
+            dataGridViewSukuCadang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewSukuCadang.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn6, Column2 });
+            dataGridViewSukuCadang.Dock = DockStyle.Top;
+            dataGridViewSukuCadang.EnableHeadersVisualStyles = false;
+            dataGridViewSukuCadang.Location = new Point(0, 0);
+            dataGridViewSukuCadang.Name = "dataGridViewSukuCadang";
+            dataGridViewSukuCadang.RowHeadersVisible = false;
+            dataGridViewSukuCadang.RowHeadersWidth = 51;
+            dataGridViewSukuCadang.Size = new Size(351, 491);
+            dataGridViewSukuCadang.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -198,20 +208,20 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(dataGridView3);
+            panel2.Controls.Add(dataGridViewPesanan);
             panel2.Location = new Point(828, 192);
             panel2.Name = "panel2";
             panel2.Size = new Size(330, 491);
             panel2.TabIndex = 6;
             // 
-            // dataGridView3
+            // dataGridViewPesanan
             // 
-            dataGridView3.AllowUserToAddRows = false;
-            dataGridView3.AllowUserToDeleteRows = false;
-            dataGridView3.AllowUserToResizeColumns = false;
-            dataGridView3.AllowUserToResizeRows = false;
-            dataGridView3.BackgroundColor = Color.White;
-            dataGridView3.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewPesanan.AllowUserToAddRows = false;
+            dataGridViewPesanan.AllowUserToDeleteRows = false;
+            dataGridViewPesanan.AllowUserToResizeColumns = false;
+            dataGridViewPesanan.AllowUserToResizeRows = false;
+            dataGridViewPesanan.BackgroundColor = Color.White;
+            dataGridViewPesanan.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = Color.LimeGreen;
             dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
@@ -219,18 +229,18 @@
             dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            dataGridView3.ColumnHeadersHeight = 35;
-            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridView3.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2 });
-            dataGridView3.Dock = DockStyle.Top;
-            dataGridView3.EnableHeadersVisualStyles = false;
-            dataGridView3.Location = new Point(0, 0);
-            dataGridView3.Name = "dataGridView3";
-            dataGridView3.RowHeadersVisible = false;
-            dataGridView3.RowHeadersWidth = 51;
-            dataGridView3.Size = new Size(330, 491);
-            dataGridView3.TabIndex = 1;
+            dataGridViewPesanan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewPesanan.ColumnHeadersHeight = 35;
+            dataGridViewPesanan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewPesanan.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, Column1, dataGridViewTextBoxColumn2 });
+            dataGridViewPesanan.Dock = DockStyle.Top;
+            dataGridViewPesanan.EnableHeadersVisualStyles = false;
+            dataGridViewPesanan.Location = new Point(0, 0);
+            dataGridViewPesanan.Name = "dataGridViewPesanan";
+            dataGridViewPesanan.RowHeadersVisible = false;
+            dataGridViewPesanan.RowHeadersWidth = 51;
+            dataGridViewPesanan.Size = new Size(330, 491);
+            dataGridViewPesanan.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -239,12 +249,40 @@
             dataGridViewTextBoxColumn1.MinimumWidth = 6;
             dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
+            // Column1
+            // 
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column1.HeaderText = "Qty";
+            Column1.MinimumWidth = 6;
+            Column1.Name = "Column1";
+            Column1.Width = 59;
+            // 
             // dataGridViewTextBoxColumn2
             // 
+            dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewTextBoxColumn2.HeaderText = "Harga";
             dataGridViewTextBoxColumn2.MinimumWidth = 6;
             dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            dataGridViewTextBoxColumn2.Width = 125;
+            dataGridViewTextBoxColumn2.Width = 77;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.FromArgb(255, 166, 0);
+            panel4.Controls.Add(label7);
+            panel4.Location = new Point(828, 739);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(330, 44);
+            panel4.TabIndex = 2;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(9, 11);
+            label7.Name = "label7";
+            label7.Size = new Size(90, 20);
+            label7.TabIndex = 0;
+            label7.Text = "Total Harga:";
             // 
             // comboBox1
             // 
@@ -313,10 +351,75 @@
             comboBox3.Size = new Size(205, 28);
             comboBox3.TabIndex = 14;
             // 
+            // button1
+            // 
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.Cursor = Cursors.Hand;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Location = new Point(109, 889);
+            button1.Name = "button1";
+            button1.Size = new Size(191, 35);
+            button1.TabIndex = 15;
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
+            button2.BackgroundImageLayout = ImageLayout.Stretch;
+            button2.Cursor = Cursors.Hand;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Location = new Point(469, 889);
+            button2.Name = "button2";
+            button2.Size = new Size(191, 35);
+            button2.TabIndex = 16;
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // button3
+            // 
+            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
+            button3.BackgroundImageLayout = ImageLayout.Stretch;
+            button3.Cursor = Cursors.Hand;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Location = new Point(920, 889);
+            button3.Name = "button3";
+            button3.Size = new Size(130, 35);
+            button3.TabIndex = 17;
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(828, 797);
+            label8.Name = "label8";
+            label8.Size = new Size(46, 20);
+            label8.TabIndex = 19;
+            label8.Text = "Bayar";
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(828, 820);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(330, 27);
+            textBox4.TabIndex = 18;
+            textBox4.TextChanged += textBox4_TextChanged;
+            // 
             // V_LayananServis
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(label8);
+            Controls.Add(textBox4);
+            Controls.Add(panel4);
+            Controls.Add(button3);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(comboBox3);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -336,11 +439,13 @@
             Size = new Size(1185, 970);
             Load += V_LayananServis_Load;
             panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewLayanan).EndInit();
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewSukuCadang).EndInit();
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewPesanan).EndInit();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -352,17 +457,15 @@
         private Label label1;
         private Label label2;
         private Panel panel3;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewLayanan;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn Column4;
         private Panel panel1;
-        private DataGridView dataGridView2;
+        private DataGridView dataGridViewSukuCadang;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private DataGridViewTextBoxColumn Column2;
         private Panel panel2;
-        private DataGridView dataGridView3;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridView dataGridViewPesanan;
         private ComboBox comboBox1;
         private ComboBox comboBox2;
         private TextBox textBox3;
@@ -371,5 +474,15 @@
         private Label label5;
         private Label label6;
         private ComboBox comboBox3;
+        private Button button1;
+        private Button button2;
+        private Button button3;
+        private Panel panel4;
+        private Label label7;
+        private Label label8;
+        private TextBox textBox4;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     }
 }

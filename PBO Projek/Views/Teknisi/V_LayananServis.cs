@@ -19,12 +19,13 @@ namespace PBO_Projek.Views.Teknisi
         {
             InitializeComponent();
             Controller = controller;
-            Servis = new C_Servis(Controller,this);    
+            Servis = new C_Servis(Controller, this);
         }
 
         private void V_LayananServis_Load(object sender, EventArgs e)
         {
             comboboxload();
+            DataGridLoad();
         }
 
         private void comboboxload()
@@ -40,6 +41,42 @@ namespace PBO_Projek.Views.Teknisi
             comboBox2.DataSource = Servis.GetAllSukuCadang();
             comboBox2.DisplayMember = "Nama_Suku_Cadang";
             comboBox2.ValueMember = "Id_Suku_Cadang";
+
+        }
+
+        private void DataGridLoad()
+        {
+            var layananlist = Servis.GetAllLayanan();
+            var sukucadanglist = Servis.GetAllSukuCadang();
+
+            foreach (var layanan in layananlist)
+            {
+                dataGridViewLayanan.Rows.Add(layanan.Nama_Layanan, layanan.Harga_Layanan);
+            }
+            foreach (var sukucadang in sukucadanglist)
+            {
+                dataGridViewSukuCadang.Rows.Add(sukucadang.Nama_Suku_Cadang, sukucadang.Harga);
+            }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

@@ -13,7 +13,6 @@ namespace PBO_Projek.Controller
 {
     public class C_Servis : Connector
     {
-        private string addres = $"Host=localhost;Database=MekanikHunter;Username=postgres;Password=123";
         C_Homepage Controller;
         V_LayananServis Servis;
 
