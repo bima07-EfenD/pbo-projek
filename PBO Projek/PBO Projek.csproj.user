@@ -10,6 +10,9 @@
     <Compile Update="Views\FormTambahKategori.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\HomepageKasir.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\HomepageOwner.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -42,9 +45,6 @@
     </Compile>
     <Compile Update="Views\Teknisi\V_LayananServis.cs">
       <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Views\V_HomePageTeknisi.cs">
-      <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
 </Project>

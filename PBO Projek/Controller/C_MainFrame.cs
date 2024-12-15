@@ -1,4 +1,6 @@
-﻿using PBO_Projek.Core;
+﻿using Npgsql;
+using PBO_Projek.Core;
+using PBO_Projek.Model;
 using PBO_Projek.Views;
 using System;
 using System.Collections.Generic;
@@ -29,14 +31,69 @@ namespace PBO_Projek.Controller
             v_mainFrame.panel1.Controls.Clear();
             v_mainFrame.panel1.Controls.Add(view);
         }
-        public void login() 
+        public void login()
         {
-            if(v_LoginPemilik.Username.Text == "admin" || v_LoginPemilik.textPassword.Text == "admin")
+            if (v_LoginPemilik.Username.Text == "admin" || v_LoginPemilik.textPassword.Text == "admin")
             {
                 HomepageOwner homepageOwner = new HomepageOwner();
                 v_mainFrame.Hide();
                 homepageOwner.ShowDialog();
                 v_mainFrame.Close();
+            }
+        }
+
+        public M_Kasir GetKasirByUsername(string username)
+        {
+            string query = "SELECT Id_Kasir, Nama_Kasir, Username, Password FROM Data_Kasir WHERE Username = @Username;";
+            using (var conn = new NpgsqlConnection(addres))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Username", username);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new M_Kasir
+                            {
+                                Id_Kasir = reader.GetInt32(reader.GetOrdinal("Id_Kasir")),
+                                Nama_Kasir = reader.GetString(reader.GetOrdinal("Nama_Kasir")),
+                                Username = reader.GetString(reader.GetOrdinal("Username")),
+                                Password = reader.GetString(reader.GetOrdinal("Password"))
+                            };
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+        public bool KasirLogin(string username, string password)
+        {
+            M_Kasir kasir = GetKasirByUsername(username);
+            if (kasir != null && kasir.Password == password)
+            {
+                return true; 
+            }
+            return false;
+
+        }
+
+        public void LoginKasir(string username, string password)
+        {
+            M_Kasir kasir = GetKasirByUsername(username);
+            if (kasir != null && kasir.Password == password)
+            { 
+                MessageBox.Show($"Selamat datang, {kasir.Nama_Kasir}!", "Login Berhasil", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HomepageKasir homepageKasir = new HomepageKasir();
+                v_mainFrame.Hide();
+                homepageKasir.ShowDialog();
+                v_mainFrame.Close();
+            }
+            else
+            {
+                MessageBox.Show("Login gagal! Username atau password salah.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

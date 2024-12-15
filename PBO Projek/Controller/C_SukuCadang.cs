@@ -8,6 +8,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace PBO_Projek.Controller
 {
@@ -26,7 +27,7 @@ namespace PBO_Projek.Controller
         {
             using (var conn = new NpgsqlConnection(addres))
             {
-                cmd.Connection = conn; 
+                cmd.Connection = conn;
                 conn.Open();
                 cmd.ExecuteNonQuery();
             }
@@ -72,6 +73,61 @@ namespace PBO_Projek.Controller
                 }
             }
         }
+
+        public void editSuCa(int idsukucadang, string namaSukuCadang, int idKategori, int stok, decimal harga)
+        {
+            string query = @"UPDATE Data_Suku_Cadang SET Nama_Suku_Cadang = :Nama_Suku_Cadang, Id_Kategori = :Id_Kategori, Stok = :Stok, Harga = :Harga WHERE Id_Suku_Cadang = :Id_Suku_Cadang";
+            using (var conn = new NpgsqlConnection(addres))
+            {
+                using (NpgsqlCommand cmd = new NpgsqlCommand(query))
+                {
+                    cmd.Parameters.AddWithValue(":Id_Suku_Cadang", idsukucadang);
+                    cmd.Parameters.AddWithValue(":Nama_Suku_Cadang", namaSukuCadang);
+                    cmd.Parameters.AddWithValue(":Id_Kategori", idKategori);
+                    cmd.Parameters.AddWithValue(":Stok", stok);
+                    cmd.Parameters.AddWithValue(":Harga", harga);
+                    Execute_No_Return(cmd);
+                }
+            }
+
+        }
+        public DataTable SearchSuCa(string searchText)
+        {
+        string query = @"
+        SELECT 
+            sc.Id_Suku_Cadang,
+            sc.Nama_Suku_Cadang, 
+            k.Nama_Kategori,
+            sc.Stok,
+            sc.Harga  
+        FROM 
+            Data_Suku_Cadang sc 
+        JOIN  
+            Kategori_Suku_Cadang k 
+        ON  
+            sc.Id_Kategori = k.Id_Kategori 
+        WHERE  
+            LOWER(sc.Nama_Suku_Cadang) LIKE LOWER(@SearchText) 
+            OR LOWER(k.Nama_Kategori) LIKE LOWER(@SearchText)";
+            using (var conn = new NpgsqlConnection(addres))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@SearchText", "%" + searchText + "%");
+                    DataTable dataTable = new DataTable();
+                    dataTable.Load(cmd.ExecuteReader());
+                    dataTable.Columns.Add("No", typeof(int));
+                    for (int i = 0; i < dataTable.Rows.Count; i++)
+                    {
+                        dataTable.Rows[i]["No"] = i + 1;
+                    }
+                    return dataTable;
+                }
+            }
+        }
+
+
 
         public List<M_Kategori> GetDataKategori()
         {

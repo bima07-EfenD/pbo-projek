@@ -78,6 +78,27 @@ namespace PBO_Projek.Controller
             }
         }
 
+        public DataTable SearchLayanan(string searchText)
+        {
+            string query = @"SELECT Id_Layanan, Nama_Layanan, Harga_Layanan WHERE Nama_Layanan LIKE @SearchText";
+            using (var conn = new NpgsqlConnection(addres))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@SearchText", "%" + searchText + "%");
+                    DataTable dataTable = new DataTable();
+                    dataTable.Load(cmd.ExecuteReader());
+                    dataTable.Columns.Add("No", typeof(int));
+                    for (int i = 0; i < dataTable.Rows.Count; i++)
+                    {
+                        dataTable.Rows[i]["No"] = i + 1;
+                    }
+                    return dataTable;
+                }
+            }
+        }
+
     }
 
 }

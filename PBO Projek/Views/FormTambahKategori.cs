@@ -20,9 +20,9 @@ namespace PBO_Projek.Views
         public FormTambahKategori(C_SukuCadang controller)
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             Controller = controller;
         }
-
         private void FormTambahKategori_Load(object sender, EventArgs e)
         {
             var kategorilist = Controller.GetDataKategori();
@@ -40,20 +40,20 @@ namespace PBO_Projek.Views
                 cekkosong();
                 if (cek)
                 {
-                    if (MessageBox.Show("Apakah anda yakin ingin menambah?", "Tambah Teknisi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("Apakah anda yakin ingin menambah?", "Tambah Kategori", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         Controller.AddKategori(namakategori);
-                        MessageBox.Show("Data Teknisi Berhasil Ditambah", title);
+                        MessageBox.Show("Data Kategori Berhasil Ditambah", title);
                         Clear();
                         cek = false;
                     }
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show(ex.Message, title);
             }
         }
 
@@ -71,6 +71,11 @@ namespace PBO_Projek.Views
         {
             txtNamakategori.Clear();
 
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

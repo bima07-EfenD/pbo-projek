@@ -31,18 +31,19 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_SukuCadang));
             dgvSukuCadang = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Edit = new DataGridViewImageColumn();
             panel3 = new Panel();
             panel4 = new Panel();
             button1 = new Button();
             button2 = new Button();
             textBox1 = new TextBox();
             label2 = new Label();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Edit = new DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)dgvSukuCadang).BeginInit();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
@@ -66,7 +67,7 @@
             dgvSukuCadang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvSukuCadang.ColumnHeadersHeight = 35;
             dgvSukuCadang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvSukuCadang.Columns.AddRange(new DataGridViewColumn[] { Column1, Column3, Column6, Column4, Column5, Edit });
+            dgvSukuCadang.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column6, Column4, Column5, Edit });
             dgvSukuCadang.Dock = DockStyle.Top;
             dgvSukuCadang.EnableHeadersVisualStyles = false;
             dgvSukuCadang.Location = new Point(0, 0);
@@ -76,6 +77,61 @@
             dgvSukuCadang.Size = new Size(708, 635);
             dgvSukuCadang.TabIndex = 1;
             dgvSukuCadang.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // Column1
+            // 
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column1.HeaderText = "No";
+            Column1.MinimumWidth = 6;
+            Column1.Name = "Column1";
+            Column1.Width = 56;
+            // 
+            // Column2
+            // 
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column2.HeaderText = "Id ";
+            Column2.MinimumWidth = 6;
+            Column2.Name = "Column2";
+            Column2.Width = 50;
+            // 
+            // Column3
+            // 
+            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column3.HeaderText = "Nama Suku Cadang";
+            Column3.MinimumWidth = 6;
+            Column3.Name = "Column3";
+            // 
+            // Column6
+            // 
+            Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column6.DataPropertyName = "Nama_Kategori";
+            Column6.HeaderText = "Kategori";
+            Column6.MinimumWidth = 6;
+            Column6.Name = "Column6";
+            Column6.Width = 93;
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Stok";
+            Column4.MinimumWidth = 6;
+            Column4.Name = "Column4";
+            Column4.Width = 125;
+            // 
+            // Column5
+            // 
+            Column5.HeaderText = "Harga";
+            Column5.MinimumWidth = 6;
+            Column5.Name = "Column5";
+            Column5.Width = 125;
+            // 
+            // Edit
+            // 
+            Edit.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Edit.HeaderText = "";
+            Edit.Image = (Image)resources.GetObject("Edit.Image");
+            Edit.MinimumWidth = 6;
+            Edit.Name = "Edit";
+            Edit.Width = 6;
             // 
             // panel3
             // 
@@ -135,6 +191,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(168, 27);
             textBox1.TabIndex = 1;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // label2
             // 
@@ -146,53 +203,6 @@
             label2.Size = new Size(72, 22);
             label2.TabIndex = 0;
             label2.Text = "Search";
-            // 
-            // Column1
-            // 
-            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Column1.HeaderText = "No";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            Column1.Width = 56;
-            // 
-            // Column3
-            // 
-            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column3.HeaderText = "Nama Suku Cadang";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
-            // 
-            // Column6
-            // 
-            Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Column6.DataPropertyName = "Nama_Kategori";
-            Column6.HeaderText = "Kategori";
-            Column6.MinimumWidth = 6;
-            Column6.Name = "Column6";
-            Column6.Width = 93;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Stok";
-            Column4.MinimumWidth = 6;
-            Column4.Name = "Column4";
-            Column4.Width = 125;
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Harga";
-            Column5.MinimumWidth = 6;
-            Column5.Name = "Column5";
-            Column5.Width = 125;
-            // 
-            // Edit
-            // 
-            Edit.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Edit.HeaderText = "";
-            Edit.Image = (Image)resources.GetObject("Edit.Image");
-            Edit.MinimumWidth = 6;
-            Edit.Name = "Edit";
-            Edit.Width = 6;
             // 
             // V_SukuCadang
             // 
@@ -220,6 +230,7 @@
         private Label label2;
         private Button button1;
         private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column4;

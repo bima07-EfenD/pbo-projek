@@ -98,7 +98,6 @@ C:\Users\bimak\source\repos\pbo-projek\PBO Projek\obj\Debug\net8.0-windows\PBO_P
 C:\Users\bimak\source\repos\pbo-projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.TambahLayanan.resources
 C:\Users\bimak\source\repos\pbo-projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.TambahTeknisi.resources
 C:\Users\bimak\source\repos\pbo-projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.Teknisi.V_LayananServis.resources
-C:\Users\bimak\source\repos\pbo-projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.V_HomePageTeknisi.resources
 C:\Users\bimak\source\repos\pbo-projek\PBO Projek\obj\Debug\net8.0-windows\PBO Projek.csproj.GenerateResource.cache
 C:\Users\bimak\source\repos\pbo-projek\PBO Projek\obj\Debug\net8.0-windows\PBO Projek.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\bimak\source\repos\pbo-projek\PBO Projek\obj\Debug\net8.0-windows\PBO Projek.AssemblyInfoInputs.cache
@@ -111,3 +110,4 @@ C:\Users\bimak\source\repos\pbo-projek\PBO Projek\obj\Debug\net8.0-windows\refin
 C:\Users\bimak\source\repos\pbo-projek\PBO Projek\obj\Debug\net8.0-windows\PBO Projek.pdb
 C:\Users\bimak\source\repos\pbo-projek\PBO Projek\obj\Debug\net8.0-windows\PBO Projek.genruntimeconfig.cache
 C:\Users\bimak\source\repos\pbo-projek\PBO Projek\obj\Debug\net8.0-windows\ref\PBO Projek.dll
+C:\Users\bimak\source\repos\pbo-projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.HomepageKasir.resources

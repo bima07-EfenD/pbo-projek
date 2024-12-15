@@ -13,8 +13,8 @@ namespace PBO_Projek.Views.Teknisi
 {
     public partial class V_LayananServis : UserControl
     {
-        C_HomepageTeknisi Controller;
-        public V_LayananServis(C_HomepageTeknisi controller)
+        C_Homepage Controller;
+        public V_LayananServis(C_Homepage controller)
         {
             InitializeComponent();
             Controller = controller;

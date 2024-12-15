@@ -56,7 +56,7 @@ namespace PBO_Projek.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            V_HomePageTeknisi homepageTeknisi = new V_HomePageTeknisi();
+            HomepageKasir homepageTeknisi = new HomepageKasir();
             Controller.v_mainFrame.Hide();
             homepageTeknisi.ShowDialog();
             Controller.v_mainFrame.Close();

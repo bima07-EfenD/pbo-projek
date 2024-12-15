@@ -52,34 +52,35 @@ namespace PBO_Projek.Views
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string namalayanan = txtLayanan.Text;
+            string namaLayanan = txtLayanan.Text;
             decimal harlay;
-            bool harga = decimal.TryParse(txtHarLay.Text, out harlay);
-            if (harga)
+
+            if (cekkosong())
+                return;
+
+            // Validasi harga
+            if (!decimal.TryParse(txtHarLay.Text, out harlay))
             {
-                try
+                MessageBox.Show("Harga harus berupa angka!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtHarLay.Focus();
+                return;
+            }
+
+            try
+            {
+                if (MessageBox.Show("Apakah anda yakin ingin menambah?", "Tambah Layanan", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    cekkosong();
-                    if (cek)
-                    {
-                        Controller.addLayanan(namalayanan, harlay);
-                        if (MessageBox.Show("Apakah anda yakin ingin menambah?", "Tambah Teknisi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                        {
-                            MessageBox.Show("Data Layanan Berhasil Ditambah", title);
-                            Clear();
-                            cek = false;
-                        }
-
-                    }
-
-                }
-                catch (Exception ex)
-                {
-
-                    MessageBox.Show(ex.Message, title);
+                    Controller.addLayanan(namaLayanan, harlay);
+                    MessageBox.Show("Data Layanan Berhasil Ditambah", title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Clear();
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
         public void Clear()
         {
             txtLayanan.Clear();
@@ -87,14 +88,14 @@ namespace PBO_Projek.Views
 
         }
 
-        public void cekkosong()
+        private bool cekkosong()
         {
-            if (txtLayanan.Text == "" || txtHarLay.Text == "")
+            if (string.IsNullOrWhiteSpace(txtLayanan.Text) || string.IsNullOrWhiteSpace(txtHarLay.Text))
             {
-                MessageBox.Show("Isilah Data Jangan Kosong", "Warning");
-                return;
+                MessageBox.Show("Isilah semua data, jangan ada yang kosong!", title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return true; 
             }
-            cek = true;
+            return false;
         }
 
         private void txtHarLay_KeyPress(object sender, KeyPressEventArgs e)
