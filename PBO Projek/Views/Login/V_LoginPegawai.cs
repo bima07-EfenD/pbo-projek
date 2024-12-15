@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PBO_Projek.Views
 {
@@ -56,10 +57,16 @@ namespace PBO_Projek.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            HomepageKasir homepageTeknisi = new HomepageKasir();
-            Controller.v_mainFrame.Hide();
-            homepageTeknisi.ShowDialog();
-            Controller.v_mainFrame.Close();
+            string username = Username.Text;
+            string password = textPassword.Text;
+
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Username dan password harus diisi!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            Controller.LoginKasir(username, password);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

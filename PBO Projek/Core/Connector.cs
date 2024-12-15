@@ -78,15 +78,16 @@ namespace PBO_Projek.Core
 
             Execute_No_Return(@"
     CREATE TABLE IF NOT EXISTS Data_Pesanan (
-         Id_Pesanan SERIAL PRIMARY KEY,
-         Nama_Pemilik VARCHAR(100) NOT NULL,
-         Nomor_Kendaraan VARCHAR(50) NOT NULL,
-         Harga_Pesanan DECIMAL(10, 2) NOT NULL,
-         Id_Suku_Cadang INT,
-         Id_Teknisi INT,
-         FOREIGN KEY (Id_Suku_Cadang) REFERENCES Data_Suku_Cadang(Id_Suku_Cadang),
-         FOREIGN KEY (Id_Teknisi) REFERENCES Data_Teknisi(Id_Teknisi)
-);
+        Id_Pesanan SERIAL PRIMARY KEY,
+        Nama_Pemilik VARCHAR(100) NOT NULL,
+        Nomor_Kendaraan VARCHAR(50) NOT NULL,
+        Harga_Pesanan DECIMAL(10, 2) NOT NULL,
+        Id_Suku_Cadang INT,
+        Jumlah_Suku_Cadang INT NOT NULL,
+        Id_Teknisi INT,
+        FOREIGN KEY (Id_Suku_Cadang) REFERENCES Data_Suku_Cadang(Id_Suku_Cadang),
+        FOREIGN KEY (Id_Teknisi) REFERENCES Data_Teknisi(Id_Teknisi)
+    );
     ");
 
             Execute_No_Return(@"
@@ -99,7 +100,7 @@ namespace PBO_Projek.Core
          Id_Pesanan INT,
          FOREIGN KEY (Id_Kasir) REFERENCES Data_Kasir(Id_Kasir),
          FOREIGN KEY (Id_Pesanan) REFERENCES Data_Pesanan(Id_Pesanan)
-);
+    );
     ");
         }
 
