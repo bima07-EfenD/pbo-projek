@@ -14,15 +14,17 @@ namespace PBO_Projek.Views.Homepage
     public partial class V_RiwayatTransaksi : UserControl
     {
         C_Homepage Controller;
+        C_RiwayatTransaksi RiwayatTransaksi;
         public V_RiwayatTransaksi(C_Homepage controller)
         {
             InitializeComponent();
             Controller = controller;
+            RiwayatTransaksi = new C_RiwayatTransaksi(controller, this);
         }
 
         private void V_RiwayatTransaksi_Load(object sender, EventArgs e)
         {
-
+            RiwayatTransaksi.LoadRiwayatTransaksi();
         }
     }
 }

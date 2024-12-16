@@ -122,6 +122,34 @@ namespace PBO_Projek.Controller
             return sukuCadangList;
         }
 
+        public int GetStokSukuCadang(int idSukuCadang)
+        {
+            using (var conn = new NpgsqlConnection(addres))
+            {
+                string query = "SELECT Stok FROM Data_Suku_Cadang WHERE Id_Suku_Cadang = @IdSukuCadang";
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    try
+                    {
+                        conn.Open();
+                        cmd.Parameters.AddWithValue("@IdSukuCadang", idSukuCadang);
+                        var result = cmd.ExecuteScalar();
+                        if (result != null && int.TryParse(result.ToString(), out int stok))
+                        {
+                            return stok;
+                        }
+                        return 0; 
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Error: " + ex.Message);
+                        return 0; 
+                    }
+                }
+            }
+        }
+
+
         public void SimpanServis(M_Servis servisHeader, List<M_Servis_Detail> servisDetails)
         {
             using (var conn = new NpgsqlConnection(addres))
@@ -131,9 +159,10 @@ namespace PBO_Projek.Controller
                 {
                     try
                     {
-                        string queryHeader = "INSERT INTO Data_Servis (Nama_Pemilik, No_Kendaraan, Id_Teknisi, Total_Harga, Tanggal_Servis) " +
-                     "VALUES (@NamaPemilik, @NoKendaraan, @IdTeknisi, @TotalHarga, @TanggalServis) " +
-                     "RETURNING Id_Servis;";
+                        string queryHeader = @"
+                    INSERT INTO Data_Servis (Nama_Pemilik, No_Kendaraan, Id_Teknisi, Total_Harga, Tanggal_Servis)
+                    VALUES (@NamaPemilik, @NoKendaraan, @IdTeknisi, @TotalHarga, @TanggalServis)
+                    RETURNING Id_Servis;";
                         int idServis;
                         using (var cmd = new NpgsqlCommand(queryHeader, conn))
                         {
@@ -145,7 +174,15 @@ namespace PBO_Projek.Controller
                             idServis = (int)cmd.ExecuteScalar();
                         }
 
-                        string queryDetail = "INSERT INTO Detail_Servis (Id_Servis, Id_Layanan, Id_Suku_Cadang, Jumlah, Harga)\r\nVALUES (@IdServis, @IdLayanan, @IdSukuCadang, @Jumlah, @Harga);\r\n";
+                        string queryDetail = @"
+                    INSERT INTO Detail_Servis (Id_Servis, Id_Layanan, Id_Suku_Cadang, Jumlah, Harga)
+                    VALUES (@IdServis, @IdLayanan, @IdSukuCadang, @Jumlah, @Harga);";
+
+                        string queryUpdateStok = @"
+                    UPDATE Data_Suku_Cadang
+                    SET Stok = Stok - @Jumlah
+                    WHERE Id_Suku_Cadang = @IdSukuCadang AND Stok >= @Jumlah;";
+
                         foreach (var detail in servisDetails)
                         {
                             using (var cmdDetail = new NpgsqlCommand(queryDetail, conn))
@@ -156,6 +193,20 @@ namespace PBO_Projek.Controller
                                 cmdDetail.Parameters.AddWithValue("@Jumlah", detail.Jumlah);
                                 cmdDetail.Parameters.AddWithValue("@Harga", detail.Harga);
                                 cmdDetail.ExecuteNonQuery();
+                            }
+
+                            if (detail.Id_Suku_Cadang != 0) 
+                            {
+                                using (var cmdUpdateStok = new NpgsqlCommand(queryUpdateStok, conn))
+                                {
+                                    cmdUpdateStok.Parameters.AddWithValue("@IdSukuCadang", detail.Id_Suku_Cadang);
+                                    cmdUpdateStok.Parameters.AddWithValue("@Jumlah", detail.Jumlah);
+                                    int rowsAffected = cmdUpdateStok.ExecuteNonQuery();
+                                    if (rowsAffected == 0)
+                                    {
+                                        throw new Exception("Stok tidak mencukupi untuk suku cadang dengan ID: " + detail.Id_Suku_Cadang);
+                                    }
+                                }
                             }
                         }
 
@@ -169,5 +220,6 @@ namespace PBO_Projek.Controller
                 }
             }
         }
+
     }
 }

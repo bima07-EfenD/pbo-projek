@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_LayananServis));
             textBox1 = new TextBox();
             textBox2 = new TextBox();
@@ -46,10 +46,8 @@
             Column2 = new DataGridViewTextBoxColumn();
             panel2 = new Panel();
             dataGridViewPesanan = new DataGridView();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            Column1 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             panel4 = new Panel();
+            label10 = new Label();
             label9 = new Label();
             label7 = new Label();
             comboBox1 = new ComboBox();
@@ -65,7 +63,10 @@
             button3 = new Button();
             label8 = new Label();
             textBox4 = new TextBox();
-            label10 = new Label();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            Column1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            Hapus = new DataGridViewImageColumn();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewLayanan).BeginInit();
             panel1.SuspendLayout();
@@ -123,14 +124,14 @@
             dataGridViewLayanan.AllowUserToResizeRows = false;
             dataGridViewLayanan.BackgroundColor = Color.White;
             dataGridViewLayanan.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.LimeGreen;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle7.ForeColor = Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dataGridViewLayanan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.LimeGreen;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridViewLayanan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewLayanan.ColumnHeadersHeight = 35;
             dataGridViewLayanan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewLayanan.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, Column4 });
@@ -174,14 +175,14 @@
             dataGridViewSukuCadang.AllowUserToResizeRows = false;
             dataGridViewSukuCadang.BackgroundColor = Color.White;
             dataGridViewSukuCadang.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.LimeGreen;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle8.ForeColor = Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            dataGridViewSukuCadang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.LimeGreen;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridViewSukuCadang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewSukuCadang.ColumnHeadersHeight = 35;
             dataGridViewSukuCadang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewSukuCadang.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn6, Column2 });
@@ -224,17 +225,17 @@
             dataGridViewPesanan.AllowUserToResizeRows = false;
             dataGridViewPesanan.BackgroundColor = Color.White;
             dataGridViewPesanan.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = Color.LimeGreen;
-            dataGridViewCellStyle9.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle9.ForeColor = Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
-            dataGridViewPesanan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.LimeGreen;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridViewPesanan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridViewPesanan.ColumnHeadersHeight = 35;
             dataGridViewPesanan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewPesanan.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, Column1, dataGridViewTextBoxColumn2 });
+            dataGridViewPesanan.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, Column1, dataGridViewTextBoxColumn2, Hapus });
             dataGridViewPesanan.Dock = DockStyle.Top;
             dataGridViewPesanan.EnableHeadersVisualStyles = false;
             dataGridViewPesanan.Location = new Point(0, 0);
@@ -243,29 +244,7 @@
             dataGridViewPesanan.RowHeadersWidth = 51;
             dataGridViewPesanan.Size = new Size(330, 491);
             dataGridViewPesanan.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn1.HeaderText = "Pesanan";
-            dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // Column1
-            // 
-            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Column1.HeaderText = "Qty";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            Column1.Width = 59;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewTextBoxColumn2.HeaderText = "Harga";
-            dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            dataGridViewTextBoxColumn2.Width = 77;
+            dataGridViewPesanan.CellContentClick += dataGridViewPesanan_CellContentClick;
             // 
             // panel4
             // 
@@ -277,6 +256,16 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(330, 44);
             panel4.TabIndex = 2;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.ForeColor = Color.Transparent;
+            label10.Location = new Point(105, 12);
+            label10.Name = "label10";
+            label10.Size = new Size(0, 20);
+            label10.TabIndex = 2;
+            label10.Click += label10_Click;
             // 
             // label9
             // 
@@ -422,15 +411,37 @@
             textBox4.Size = new Size(330, 27);
             textBox4.TabIndex = 18;
             // 
-            // label10
+            // dataGridViewTextBoxColumn1
             // 
-            label10.AutoSize = true;
-            label10.ForeColor = Color.Transparent;
-            label10.Location = new Point(105, 12);
-            label10.Name = "label10";
-            label10.Size = new Size(0, 20);
-            label10.TabIndex = 2;
-            label10.Click += label10_Click;
+            dataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn1.HeaderText = "Pesanan";
+            dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // Column1
+            // 
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column1.HeaderText = "Qty";
+            Column1.MinimumWidth = 6;
+            Column1.Name = "Column1";
+            Column1.Width = 59;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewTextBoxColumn2.HeaderText = "Harga";
+            dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.Width = 77;
+            // 
+            // Hapus
+            // 
+            Hapus.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Hapus.HeaderText = "";
+            Hapus.Image = (Image)resources.GetObject("Hapus.Image");
+            Hapus.MinimumWidth = 6;
+            Hapus.Name = "Hapus";
+            Hapus.Width = 6;
             // 
             // V_LayananServis
             // 
@@ -503,10 +514,11 @@
         private Label label7;
         private Label label8;
         private TextBox textBox4;
+        private Label label9;
+        private Label label10;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private Label label9;
-        private Label label10;
+        private DataGridViewImageColumn Hapus;
     }
 }

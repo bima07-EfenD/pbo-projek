@@ -138,7 +138,20 @@
   <metadata name="dataGridViewTextBoxColumn2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="Hapus.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Hapus.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EgAACxIB0t1+/AAAAORJREFUOE+V080NgkAQBeAtgZszcLEEO9ASLMES7EA7sRRLIMqqZVACCswDYf9m
+        X/LCZjN8Fwbznw/RVo7qNEQHObqxVbWzXLaWyptcJdNQebXEXf+UqzkzyN3YNAwQXcAuiIbhNYhO8IP5
+        7BsY68IhcOiGaxkz5kV08Q4NneEUWBdFIaNjUnA2iMThQGMgkgVrQEQF54DI78W7A6EbbrPB6EeZqv/z
+        lCCqgPNANAKn9lD7g0zRLrYa1oKICrZEJ+9AZA9DcH8vIx5YsdhreAEiE6wAEcBeEHkyH7Ug8ibay1Fi
+        zBcUxtI8ueO2+QAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="button1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAL8AAAAjCAYAAADFTts+AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL

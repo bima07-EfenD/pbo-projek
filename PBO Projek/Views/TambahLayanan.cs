@@ -58,7 +58,6 @@ namespace PBO_Projek.Views
             if (cekkosong())
                 return;
 
-            // Validasi harga
             if (!decimal.TryParse(txtHarLay.Text, out harlay))
             {
                 MessageBox.Show("Harga harus berupa angka!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -93,10 +92,13 @@ namespace PBO_Projek.Views
             if (string.IsNullOrWhiteSpace(txtLayanan.Text) || string.IsNullOrWhiteSpace(txtHarLay.Text))
             {
                 MessageBox.Show("Isilah semua data, jangan ada yang kosong!", title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return true; 
+                cek = false; 
+                return true;
             }
+            cek = true;
             return false;
         }
+
 
         private void txtHarLay_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -115,35 +117,41 @@ namespace PBO_Projek.Views
             int Idlayanan;
             string namaLayanan = txtLayanan.Text;
             decimal harlay;
-            try
+
+            if (int.TryParse(lblid.Text, out Idlayanan))
             {
-                if(int.TryParse(lblid.Text, out Idlayanan)) 
+                if (decimal.TryParse(txtHarLay.Text, out harlay))
                 {
-                    if (decimal.TryParse(txtHarLay.Text, out harlay))
+                    if (cekkosong()) 
+                        return; 
+
+                    if (MessageBox.Show("Apakah anda yakin ingin mengedit?", "Edit Layanan", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        cekkosong();
-                        if (cek)
+                        try
                         {
-                            if (MessageBox.Show("Apakah anda yakin ingin mengedit?", "Edit Kasir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                            {
-                                Controller.editLayanan(Idlayanan, namaLayanan, harlay);
-                                MessageBox.Show("Data Layanan Berhasil Diedit", title);
-                                Clear();
-                                this.Dispose();
-
-                            }
-
+                            Controller.editLayanan(Idlayanan, namaLayanan, harlay);
+                            MessageBox.Show("Data Layanan Berhasil Diedit", title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Clear();
+                            this.Dispose();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
-
+                else
+                {
+                    MessageBox.Show("Harga harus berupa angka!", title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtHarLay.Focus();
+                }
             }
-            catch (Exception ex)
+            else
             {
-
-                MessageBox.Show(ex.Message, title);
+                MessageBox.Show("ID Layanan tidak valid!", title, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
     }
 }

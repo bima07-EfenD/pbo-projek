@@ -28,7 +28,9 @@ namespace PBO_Projek.Views.Teknisi
         private void V_LayananServis_Load(object sender, EventArgs e)
         {
             comboboxload();
+            ResetForm();
             DataGridLoad();
+
         }
 
         private void comboboxload()
@@ -66,7 +68,7 @@ namespace PBO_Projek.Views.Teknisi
 
         private void InitializeGrid()
         {
-            dataGridViewPesanan.Columns.Clear(); // Bersihkan kolom
+            dataGridViewPesanan.Columns.Clear();
 
             dataGridViewPesanan.Columns.Add("ID_Layanan", "ID Layanan");
             dataGridViewPesanan.Columns.Add("ID_SukuCadang", "ID Suku Cadang");
@@ -77,6 +79,14 @@ namespace PBO_Projek.Views.Teknisi
             dataGridViewPesanan.Columns.Add("NamaItem", "Nama Item");
             dataGridViewPesanan.Columns.Add("Jumlah", "Jumlah");
             dataGridViewPesanan.Columns.Add("Harga", "Harga");
+
+            DataGridViewButtonColumn colHapus = new DataGridViewButtonColumn();
+            colHapus.Name = "Hapus";
+            colHapus.HeaderText = ""; 
+            colHapus.Text = "X"; 
+            colHapus.UseColumnTextForButtonValue = true;
+            dataGridViewPesanan.Columns.Add(colHapus);
+
 
             dataGridViewPesanan.Columns["Harga"].ReadOnly = true;
             dataGridViewPesanan.AllowUserToAddRows = false;
@@ -136,27 +146,38 @@ namespace PBO_Projek.Views.Teknisi
 
         private decimal HitungTotalHarga()
         {
-            decimal total = 0;
+            decimal totalHarga = 0;
 
             foreach (DataGridViewRow row in dataGridViewPesanan.Rows)
             {
-                if (!row.IsNewRow)
+                if (row.Cells["Harga"].Value != null && row.Cells["Jumlah"].Value != null)
                 {
-                    total += Convert.ToDecimal(row.Cells["Harga"].Value);
+                    decimal harga = Convert.ToDecimal(row.Cells["Harga"].Value);
+                    int qty = Convert.ToInt32(row.Cells["Jumlah"].Value);
+
+                    totalHarga += harga * qty;
                 }
             }
 
-            label10.Text = total.ToString("N0");
-            return total;
+            label10.Text = $"Total: {totalHarga:C}";
+
+            return totalHarga; 
         }
+
 
 
         private void ResetForm()
         {
             textBox2.Clear();
             textBox1.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+
             comboBox3.SelectedIndex = -1;
-            label10.Text.Trim();
+            comboBox1.SelectedIndex = -1;
+            comboBox2.SelectedIndex = -1;
+
+            label10.Text = "0";
             dataGridViewPesanan.Rows.Clear();
         }
         private void button1_Click(object sender, EventArgs e)
@@ -180,14 +201,18 @@ namespace PBO_Projek.Views.Teknisi
             int jumlah;
             if (!int.TryParse(textBox3.Text, out jumlah) || jumlah <= 0)
             {
-                MessageBox.Show("Jumlah harus berupa angka positif!", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Masukkan Jumlah Suku Cadang !!", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             TambahKeGrid(selectedSukuCadang.Nama_Suku_Cadang, jumlah, selectedSukuCadang.Harga, false, idSukuCadang: selectedSukuCadang.Id_Suku_Cadang);
         }
 
-
+        private bool ValidasiStok(int idSukuCadang, int jumlah)
+        {
+            int stokTersedia = Servis.GetStokSukuCadang(idSukuCadang);
+            return stokTersedia >= jumlah;
+        }
 
 
         private void button3_Click(object sender, EventArgs e)
@@ -212,12 +237,28 @@ namespace PBO_Projek.Views.Teknisi
                     return;
                 }
 
+                if (string.IsNullOrWhiteSpace(textBox4.Text) || !decimal.TryParse(textBox4.Text, out decimal jumlahBayar))
+                {
+                    MessageBox.Show("Masukkan nominal bayar yang valid!", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                decimal totalHarga = HitungTotalHarga();
+
+                if (jumlahBayar < totalHarga)
+                {
+                    MessageBox.Show("Jumlah bayar harus lebih besar atau sama dengan total harga!", "Pembayaran Kurang", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                decimal kembalian = jumlahBayar - totalHarga;
+
                 M_Servis servisHeader = new M_Servis
                 {
                     Nama_Pemilik = textBox2.Text.Trim(),
                     No_Kendaraan = textBox1.Text.Trim(),
                     Id_Teknisi = Convert.ToInt32(comboBox3.SelectedValue),
-                    Total_Harga = HitungTotalHarga(),
+                    Total_Harga = totalHarga,
                     Tanggal_Servis = DateTime.Now
                 };
 
@@ -226,25 +267,37 @@ namespace PBO_Projek.Views.Teknisi
                 {
                     if (!row.IsNewRow)
                     {
-                        servisDetails.Add(new M_Servis_Detail
+                        var detail = new M_Servis_Detail
                         {
                             Id_Layanan = row.Cells["ID_Layanan"].Value != null ? Convert.ToInt32(row.Cells["ID_Layanan"].Value) : 0,
                             Id_Suku_Cadang = row.Cells["ID_SukuCadang"].Value != null ? Convert.ToInt32(row.Cells["ID_SukuCadang"].Value) : 0,
                             Jumlah = Convert.ToInt32(row.Cells["Jumlah"].Value),
                             Harga = Convert.ToDecimal(row.Cells["Harga"].Value)
-                        });
+                        };
+
+                        if (detail.Id_Suku_Cadang != 0 && !ValidasiStok(detail.Id_Suku_Cadang, detail.Jumlah))
+                        {
+                            MessageBox.Show($"Stok tidak mencukupi untuk suku cadang dengan ID: {detail.Id_Suku_Cadang}",
+                                            "Stok Tidak Cukup", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                        servisDetails.Add(detail);
                     }
                 }
 
                 Servis.SimpanServis(servisHeader, servisDetails);
+                MessageBox.Show($"Transaksi berhasil !!!\n\nTotal Harga: {totalHarga:C}\nJumlah Bayar: {jumlahBayar:C}\nKembalian: {kembalian:C}",
+                                "Transaksi Berhasil", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 ResetForm();
-                MessageBox.Show("Transaksi berhasil disimpan!");
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message}");
+                MessageBox.Show($"Error: {ex.Message}", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
 
 
@@ -264,6 +317,23 @@ namespace PBO_Projek.Views.Teknisi
         private void label10_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridViewPesanan_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridViewPesanan.Columns[e.ColumnIndex].Name == "Hapus" && e.RowIndex >= 0)
+            {
+                var result = MessageBox.Show("Apakah Anda yakin ingin menghapus item ini?",
+                                             "Konfirmasi Hapus",
+                                             MessageBoxButtons.YesNo,
+                                             MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    dataGridViewPesanan.Rows.RemoveAt(e.RowIndex);
+                    HitungTotalHarga();
+                }
+            }
         }
     }
 }

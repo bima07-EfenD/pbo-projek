@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_RiwayatTransaksi));
             panel3 = new Panel();
             panel4 = new Panel();
             textBox1 = new TextBox();
@@ -41,6 +42,7 @@
             Column7 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
+            Detail = new DataGridViewImageColumn();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvLay).BeginInit();
@@ -102,7 +104,7 @@
             dgvLay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvLay.ColumnHeadersHeight = 35;
             dgvLay.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvLay.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column6, Column7, Column4, Column5 });
+            dgvLay.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column6, Column7, Column4, Column5, Detail });
             dgvLay.Dock = DockStyle.Top;
             dgvLay.EnableHeadersVisualStyles = false;
             dgvLay.Location = new Point(0, 0);
@@ -123,41 +125,41 @@
             // Column2
             // 
             Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Column2.HeaderText = "Id Transaksi";
+            Column2.HeaderText = "Id Servis";
             Column2.MinimumWidth = 6;
             Column2.Name = "Column2";
-            Column2.Width = 112;
+            Column2.Width = 91;
             // 
             // Column3
             // 
             Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column3.HeaderText = "Nama Kendaraan";
+            Column3.HeaderText = "Nama Pemilik";
             Column3.MinimumWidth = 6;
             Column3.Name = "Column3";
             // 
             // Column6
             // 
             Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Column6.HeaderText = "Kasir";
+            Column6.HeaderText = "No. Kendaraan";
             Column6.MinimumWidth = 6;
             Column6.Name = "Column6";
-            Column6.Width = 68;
+            Column6.Width = 134;
             // 
             // Column7
             // 
             Column7.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Column7.HeaderText = "Teknisi";
+            Column7.HeaderText = "Nama Teknisi";
             Column7.MinimumWidth = 6;
             Column7.Name = "Column7";
-            Column7.Width = 80;
+            Column7.Width = 124;
             // 
             // Column4
             // 
             Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Column4.HeaderText = "Tanggal Transaksi";
+            Column4.HeaderText = "Tanggal Servis";
             Column4.MinimumWidth = 6;
             Column4.Name = "Column4";
-            Column4.Width = 151;
+            Column4.Width = 130;
             // 
             // Column5
             // 
@@ -166,6 +168,16 @@
             Column5.MinimumWidth = 6;
             Column5.Name = "Column5";
             Column5.Width = 114;
+            // 
+            // Detail
+            // 
+            Detail.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Detail.HeaderText = "";
+            Detail.Image = (Image)resources.GetObject("Detail.Image");
+            Detail.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            Detail.MinimumWidth = 6;
+            Detail.Name = "Detail";
+            Detail.Width = 6;
             // 
             // V_RiwayatTransaksi
             // 
@@ -188,7 +200,6 @@
         private Panel panel4;
         private TextBox textBox1;
         private Label label2;
-        private DataGridView dgvLay;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
@@ -196,5 +207,7 @@
         private DataGridViewTextBoxColumn Column7;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
+        private DataGridViewImageColumn Detail;
+        public DataGridView dgvLay;
     }
 }
