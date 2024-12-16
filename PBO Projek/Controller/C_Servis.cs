@@ -58,12 +58,10 @@ namespace PBO_Projek.Controller
 
         public List<M_Layanancs> GetAllLayanan()
         {
-            List<M_Layanancs> layananList = new List<M_Layanancs>();
-
+            var layananList = new List<M_Layanancs>();
             using (var conn = new NpgsqlConnection(addres))
             {
                 string query = "SELECT Id_Layanan, Nama_Layanan, Harga_Layanan FROM Data_Layanan";
-
                 using (var cmd = new NpgsqlCommand(query, conn))
                 {
                     try
@@ -75,9 +73,9 @@ namespace PBO_Projek.Controller
                             {
                                 layananList.Add(new M_Layanancs
                                 {
-                                    Id_Layanan = reader.GetInt32(reader.GetOrdinal("Id_Layanan")),
-                                    Nama_Layanan = reader.GetString(reader.GetOrdinal("Nama_Layanan")),
-                                    Harga_Layanan = reader.GetDecimal(reader.GetOrdinal("Harga_Layanan"))
+                                    Id_Layanan = reader.GetInt32(0),
+                                    Nama_Layanan = reader.GetString(1),
+                                    Harga_Layanan = reader.GetDecimal(2)
                                 });
                             }
                         }
@@ -93,16 +91,10 @@ namespace PBO_Projek.Controller
 
         public List<M_SukuCadang> GetAllSukuCadang()
         {
-            List<M_SukuCadang> sukuCadangList = new List<M_SukuCadang>();
-
+            var sukuCadangList = new List<M_SukuCadang>();
             using (var conn = new NpgsqlConnection(addres))
             {
-                string query = @"
-              SELECT sc.Id_Suku_Cadang, sc.Nama_Suku_Cadang, sc.Stok, sc.Harga, 
-                 sc.Id_Kategori, kc.Nama_Kategori
-              FROM Data_Suku_Cadang sc
-              LEFT JOIN Kategori_Suku_Cadang kc ON sc.Id_Kategori = kc.Id_Kategori";
-
+                string query = "SELECT Id_Suku_Cadang, Nama_Suku_Cadang, Harga FROM Data_Suku_Cadang";
                 using (var cmd = new NpgsqlCommand(query, conn))
                 {
                     try
@@ -114,14 +106,9 @@ namespace PBO_Projek.Controller
                             {
                                 sukuCadangList.Add(new M_SukuCadang
                                 {
-                                    Id_Suku_Cadang = reader.GetInt32(reader.GetOrdinal("Id_Suku_Cadang")),
-                                    Nama_Suku_Cadang = reader.GetString(reader.GetOrdinal("Nama_Suku_Cadang")),
-                                    Harga = reader.GetDecimal(reader.GetOrdinal("Harga")),
-                                    Stok = reader.GetInt32(reader.GetOrdinal("Stok")),
-                                    Id_Kategori = reader.GetInt32(reader.GetOrdinal("Id_Kategori")),
-                                    Nama_Kategori = reader.IsDBNull(reader.GetOrdinal("Nama_Kategori"))
-                                        ? null
-                                        : reader.GetString(reader.GetOrdinal("Nama_Kategori"))
+                                    Id_Suku_Cadang = reader.GetInt32(0),
+                                    Nama_Suku_Cadang = reader.GetString(1),
+                                    Harga = reader.GetDecimal(2)
                                 });
                             }
                         }
@@ -133,6 +120,54 @@ namespace PBO_Projek.Controller
                 }
             }
             return sukuCadangList;
+        }
+
+        public void SimpanServis(M_Servis servisHeader, List<M_Servis_Detail> servisDetails)
+        {
+            using (var conn = new NpgsqlConnection(addres))
+            {
+                conn.Open();
+                using (var trans = conn.BeginTransaction())
+                {
+                    try
+                    {
+                        string queryHeader = "INSERT INTO Data_Servis (Nama_Pemilik, No_Kendaraan, Id_Teknisi, Total_Harga, Tanggal_Servis) " +
+                     "VALUES (@NamaPemilik, @NoKendaraan, @IdTeknisi, @TotalHarga, @TanggalServis) " +
+                     "RETURNING Id_Servis;";
+                        int idServis;
+                        using (var cmd = new NpgsqlCommand(queryHeader, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@NamaPemilik", servisHeader.Nama_Pemilik);
+                            cmd.Parameters.AddWithValue("@NoKendaraan", servisHeader.No_Kendaraan);
+                            cmd.Parameters.AddWithValue("@IdTeknisi", servisHeader.Id_Teknisi);
+                            cmd.Parameters.AddWithValue("@TotalHarga", servisHeader.Total_Harga);
+                            cmd.Parameters.AddWithValue("@TanggalServis", servisHeader.Tanggal_Servis);
+                            idServis = (int)cmd.ExecuteScalar();
+                        }
+
+                        string queryDetail = "INSERT INTO Detail_Servis (Id_Servis, Id_Layanan, Id_Suku_Cadang, Jumlah, Harga)\r\nVALUES (@IdServis, @IdLayanan, @IdSukuCadang, @Jumlah, @Harga);\r\n";
+                        foreach (var detail in servisDetails)
+                        {
+                            using (var cmdDetail = new NpgsqlCommand(queryDetail, conn))
+                            {
+                                cmdDetail.Parameters.AddWithValue("@IdServis", idServis);
+                                cmdDetail.Parameters.AddWithValue("@IdLayanan", detail.Id_Layanan != 0 ? (object)detail.Id_Layanan : DBNull.Value);
+                                cmdDetail.Parameters.AddWithValue("@IdSukuCadang", detail.Id_Suku_Cadang != 0 ? (object)detail.Id_Suku_Cadang : DBNull.Value);
+                                cmdDetail.Parameters.AddWithValue("@Jumlah", detail.Jumlah);
+                                cmdDetail.Parameters.AddWithValue("@Harga", detail.Harga);
+                                cmdDetail.ExecuteNonQuery();
+                            }
+                        }
+
+                        trans.Commit();
+                    }
+                    catch
+                    {
+                        trans.Rollback();
+                        throw;
+                    }
+                }
+            }
         }
     }
 }

@@ -77,30 +77,34 @@ namespace PBO_Projek.Core
     ");
 
             Execute_No_Return(@"
-    CREATE TABLE IF NOT EXISTS Data_Pesanan (
-        Id_Pesanan SERIAL PRIMARY KEY,
-        Nama_Pemilik VARCHAR(100) NOT NULL,
-        Nomor_Kendaraan VARCHAR(50) NOT NULL,
-        Harga_Pesanan DECIMAL(10, 2) NOT NULL,
-        Id_Suku_Cadang INT,
-        Jumlah_Suku_Cadang INT NOT NULL,
-        Id_Teknisi INT,
-        FOREIGN KEY (Id_Suku_Cadang) REFERENCES Data_Suku_Cadang(Id_Suku_Cadang),
-        FOREIGN KEY (Id_Teknisi) REFERENCES Data_Teknisi(Id_Teknisi)
-    );
+CREATE TABLE IF NOT EXISTS Data_Servis (
+    Id_Servis SERIAL PRIMARY KEY,
+    Nama_Pemilik VARCHAR(100) NOT NULL,
+    No_Kendaraan VARCHAR(20) NOT NULL,
+    Id_Teknisi INT NOT NULL,
+    Total_Harga DECIMAL(18, 2) NOT NULL,
+    Tanggal_Servis TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT FK_Teknisi FOREIGN KEY (Id_Teknisi)
+    REFERENCES Data_Teknisi(Id_Teknisi) ON DELETE CASCADE
+);
+
     ");
 
             Execute_No_Return(@"
-   CREATE TABLE IF NOT EXISTS Data_Transaksi (
-         Id_Transaksi SERIAL PRIMARY KEY,
-         Nama_Kendaraan VARCHAR(100) NOT NULL,
-         Tanggal_Transaksi DATE NOT NULL,
-         Harga_Total DECIMAL(10, 2) NOT NULL,
-         Id_Kasir INT,
-         Id_Pesanan INT,
-         FOREIGN KEY (Id_Kasir) REFERENCES Data_Kasir(Id_Kasir),
-         FOREIGN KEY (Id_Pesanan) REFERENCES Data_Pesanan(Id_Pesanan)
-    );
+   CREATE TABLE IF NOT EXISTS Detail_Servis (
+    Id_Detail_Servis SERIAL PRIMARY KEY,
+    Id_Servis INT NOT NULL,
+	Id_Layanan INT,
+	Id_Suku_Cadang INT,
+	Jumlah INT NOT NULL,
+    Harga DECIMAL(18, 2) NOT NULL,
+	CONSTRAINT FK_Data_Servis FOREIGN KEY (Id_Servis)
+    REFERENCES Data_Servis(Id_Servis) ON DELETE CASCADE,
+	CONSTRAINT FK_Data_Layanan FOREIGN KEY (Id_Layanan)
+    REFERENCES Data_Layanan(Id_Layanan) ON DELETE SET NULL,
+	CONSTRAINT FK_Data_Suku_Cadang FOREIGN KEY (Id_Suku_Cadang)
+    REFERENCES Data_Suku_Cadang(Id_Suku_Cadang) ON DELETE SET NULL
+);
     ");
         }
 

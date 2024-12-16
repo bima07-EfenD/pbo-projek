@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_LayananServis));
             textBox1 = new TextBox();
             textBox2 = new TextBox();
@@ -50,6 +50,7 @@
             Column1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             panel4 = new Panel();
+            label9 = new Label();
             label7 = new Label();
             comboBox1 = new ComboBox();
             comboBox2 = new ComboBox();
@@ -64,6 +65,7 @@
             button3 = new Button();
             label8 = new Label();
             textBox4 = new TextBox();
+            label10 = new Label();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewLayanan).BeginInit();
             panel1.SuspendLayout();
@@ -121,14 +123,14 @@
             dataGridViewLayanan.AllowUserToResizeRows = false;
             dataGridViewLayanan.BackgroundColor = Color.White;
             dataGridViewLayanan.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.LimeGreen;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dataGridViewLayanan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.LimeGreen;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dataGridViewLayanan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dataGridViewLayanan.ColumnHeadersHeight = 35;
             dataGridViewLayanan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewLayanan.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, Column4 });
@@ -172,14 +174,14 @@
             dataGridViewSukuCadang.AllowUserToResizeRows = false;
             dataGridViewSukuCadang.BackgroundColor = Color.White;
             dataGridViewSukuCadang.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.LimeGreen;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dataGridViewSukuCadang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.LimeGreen;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.ForeColor = Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            dataGridViewSukuCadang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             dataGridViewSukuCadang.ColumnHeadersHeight = 35;
             dataGridViewSukuCadang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewSukuCadang.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn6, Column2 });
@@ -222,14 +224,14 @@
             dataGridViewPesanan.AllowUserToResizeRows = false;
             dataGridViewPesanan.BackgroundColor = Color.White;
             dataGridViewPesanan.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.LimeGreen;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dataGridViewPesanan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = Color.LimeGreen;
+            dataGridViewCellStyle9.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle9.ForeColor = Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            dataGridViewPesanan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             dataGridViewPesanan.ColumnHeadersHeight = 35;
             dataGridViewPesanan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewPesanan.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, Column1, dataGridViewTextBoxColumn2 });
@@ -268,11 +270,22 @@
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(255, 166, 0);
+            panel4.Controls.Add(label10);
+            panel4.Controls.Add(label9);
             panel4.Controls.Add(label7);
             panel4.Location = new Point(828, 739);
             panel4.Name = "panel4";
             panel4.Size = new Size(330, 44);
             panel4.TabIndex = 2;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(101, 11);
+            label9.Name = "label9";
+            label9.Size = new Size(0, 20);
+            label9.TabIndex = 1;
             // 
             // label7
             // 
@@ -396,7 +409,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(828, 797);
+            label8.Location = new Point(828, 788);
             label8.Name = "label8";
             label8.Size = new Size(46, 20);
             label8.TabIndex = 19;
@@ -404,11 +417,20 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(828, 820);
+            textBox4.Location = new Point(828, 811);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(330, 27);
             textBox4.TabIndex = 18;
-            textBox4.TextChanged += textBox4_TextChanged;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.ForeColor = Color.Transparent;
+            label10.Location = new Point(105, 12);
+            label10.Name = "label10";
+            label10.Size = new Size(0, 20);
+            label10.TabIndex = 2;
+            label10.Click += label10_Click;
             // 
             // V_LayananServis
             // 
@@ -484,5 +506,7 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private Label label9;
+        private Label label10;
     }
 }

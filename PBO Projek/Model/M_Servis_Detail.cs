@@ -7,19 +7,19 @@ using System.Threading.Tasks;
 
 namespace PBO_Projek.Model
 {
-    public class M_Servis
+    public class M_Servis_Detail
     {
         [Key]
+        public int Id_Detail_Servis { get; set; }
+        [Required]
         public int Id_Servis { get; set; }
         [Required]
-        public string Nama_Pemilik { get; set; }
+        public int Id_Layanan { get; set; }
         [Required]
-        public string No_Kendaraan { get; set; }
+        public int Id_Suku_Cadang { get; set; }
         [Required]
-        public int Id_Teknisi { get; set; } 
+        public int Jumlah { get; set; }
         [Required]
-        public decimal Total_Harga { get; set; }
-        public DateTime Tanggal_Servis { get; set; }
+        public decimal Harga { get; set; }
     }
 }
-
