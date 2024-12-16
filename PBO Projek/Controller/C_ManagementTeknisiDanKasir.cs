@@ -35,7 +35,7 @@ namespace PBO_Projek.Controller
         public List<M_Teknisi> GetDataTeknisi()
         {
             List<M_Teknisi> dtteknisi = new List<M_Teknisi>();
-            DataTable query = Execute_With_Return("SELECT Id_Teknisi, Nama_Teknisi FROM Data_Teknisi");
+            DataTable query = Execute_With_Return("SELECT Id_Teknisi, Nama_Teknisi FROM Data_Teknisi WHERE IsActive = TRUE");
 
             foreach (DataRow row in query.Rows)
             {
@@ -48,6 +48,7 @@ namespace PBO_Projek.Controller
             }
             return dtteknisi;
         }
+
 
         public void AddTeknisi(string namaTeknisi)
         {
@@ -65,7 +66,7 @@ namespace PBO_Projek.Controller
 
         public void DeleteTeknisi(int idTeknisi)
         {
-            string query = "DELETE FROM Data_Teknisi WHERE Id_Teknisi = @Id_Teknisi;";
+            string query = "UPDATE Data_Teknisi SET IsActive = FALSE WHERE Id_Teknisi = @Id_Teknisi;";
             using (var conn = new NpgsqlConnection(addres))
             {
                 conn.Open();
@@ -76,6 +77,7 @@ namespace PBO_Projek.Controller
                 }
             }
         }
+
 
         public DataTable SearchTeknisi(string searchText)
         {

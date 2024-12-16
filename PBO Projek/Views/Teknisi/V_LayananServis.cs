@@ -127,11 +127,6 @@ namespace PBO_Projek.Views.Teknisi
             HitungTotalHarga();
         }
 
-
-
-
-
-
         private bool ItemSudahAda(string namaItem)
         {
             foreach (DataGridViewRow row in dataGridViewPesanan.Rows)

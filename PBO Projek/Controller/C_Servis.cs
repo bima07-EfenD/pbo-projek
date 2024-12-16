@@ -28,7 +28,7 @@ namespace PBO_Projek.Controller
 
             using (var conn = new NpgsqlConnection(addres))
             {
-                string query = "SELECT Id_Teknisi, Nama_Teknisi FROM Data_Teknisi";
+                string query = "SELECT Id_Teknisi, Nama_Teknisi FROM Data_Teknisi WHERE IsActive = TRUE";
 
                 using (var cmd = new NpgsqlCommand(query, conn))
                 {
@@ -55,6 +55,7 @@ namespace PBO_Projek.Controller
             }
             return teknisiList;
         }
+
 
         public List<M_Layanancs> GetAllLayanan()
         {
