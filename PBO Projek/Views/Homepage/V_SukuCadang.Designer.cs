@@ -225,7 +225,6 @@
         private DataGridView dgvSukuCadang;
         private Panel panel3;
         private Panel panel4;
-        private Button button2;
         private TextBox textBox1;
         private Label label2;
         private Button button1;
@@ -236,5 +235,6 @@
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewImageColumn Edit;
+        public Button button2;
     }
 }

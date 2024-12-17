@@ -1,5 +1,6 @@
 ﻿using Npgsql;
 using PBO_Projek.Controller;
+using PBO_Projek.Model;
 using System;
 using System.Collections.Generic;   
 using System.ComponentModel;
@@ -33,7 +34,11 @@ namespace PBO_Projek.Views.Homepage
 
         private void V_SukuCadang_Load(object sender, EventArgs e)
         {
-
+            if(M_Kasir.Id != null)
+            {
+                button1.Visible = false;
+                button2.Visible = false;
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

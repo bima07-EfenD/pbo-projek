@@ -30,5 +30,10 @@ namespace PBO_Projek.Views
         {
 
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDetailTransaksi));
             panel1 = new Panel();
             label1 = new Label();
             dgvDetail = new DataGridView();
@@ -38,6 +39,7 @@
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             Column6 = new DataGridViewTextBoxColumn();
+            btnBack = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvDetail).BeginInit();
             SuspendLayout();
             // 
@@ -134,11 +136,26 @@
             Column6.Name = "Column6";
             Column6.Width = 77;
             // 
+            // btnBack
+            // 
+            btnBack.BackColor = Color.Transparent;
+            btnBack.BackgroundImage = (Image)resources.GetObject("btnBack.BackgroundImage");
+            btnBack.BackgroundImageLayout = ImageLayout.Stretch;
+            btnBack.FlatAppearance.BorderSize = 0;
+            btnBack.FlatStyle = FlatStyle.Flat;
+            btnBack.Location = new Point(596, 29);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(30, 30);
+            btnBack.TabIndex = 35;
+            btnBack.UseVisualStyleBackColor = false;
+            btnBack.Click += btnBack_Click;
+            // 
             // FormDetailTransaksi
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(629, 359);
+            Controls.Add(btnBack);
             Controls.Add(dgvDetail);
             Controls.Add(label1);
             Controls.Add(panel1);
@@ -161,5 +178,6 @@
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column6;
+        private Button btnBack;
     }
 }

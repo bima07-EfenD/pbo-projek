@@ -23,6 +23,10 @@ namespace PBO_Projek.Controller
             viewsuca = view;
         }
 
+        private void Viewsuca_Click(object sender, EventArgs e)
+        {
+            viewsuca.button2.Visible = false;
+        }
         public void Execute_No_Return(NpgsqlCommand cmd)
         {
             using (var conn = new NpgsqlConnection(addres))
