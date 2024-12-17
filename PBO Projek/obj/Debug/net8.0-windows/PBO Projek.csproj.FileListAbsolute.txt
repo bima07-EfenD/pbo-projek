@@ -111,3 +111,4 @@ C:\Users\bimak\source\repos\pbo-projek\PBO Projek\obj\Debug\net8.0-windows\PBO P
 C:\Users\bimak\source\repos\pbo-projek\PBO Projek\obj\Debug\net8.0-windows\PBO Projek.genruntimeconfig.cache
 C:\Users\bimak\source\repos\pbo-projek\PBO Projek\obj\Debug\net8.0-windows\ref\PBO Projek.dll
 C:\Users\bimak\source\repos\pbo-projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.HomepageKasir.resources
+C:\Users\bimak\source\repos\pbo-projek\PBO Projek\obj\Debug\net8.0-windows\PBO_Projek.Views.FormDetailTransaksi.resources

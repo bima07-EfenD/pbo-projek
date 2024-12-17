@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,11 +12,11 @@ namespace PBO_Projek.Model
     {
         [Key]
         public int Id_Detail_Servis { get; set; }
-        [Required]
+        [ForeignKey("M_Servis")]
         public int Id_Servis { get; set; }
-        [Required]
+        [ForeignKey("M_Layanan")]
         public int Id_Layanan { get; set; }
-        [Required]
+        [ForeignKey("M_SukuCadang")]
         public int Id_Suku_Cadang { get; set; }
         [Required]
         public int Jumlah { get; set; }

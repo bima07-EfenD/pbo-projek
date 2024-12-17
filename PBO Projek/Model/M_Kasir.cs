@@ -9,6 +9,7 @@ namespace PBO_Projek.Model
 {
     public class M_Kasir
     {
+        public static int Id { get; set; }
         [Key]
         public int Id_Kasir { get; set; }
         [Required]

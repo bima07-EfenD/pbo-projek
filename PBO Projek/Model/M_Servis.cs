@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,9 @@ namespace PBO_Projek.Model
         public string Nama_Pemilik { get; set; }
         [Required]
         public string No_Kendaraan { get; set; }
-        [Required]
+        [ForeignKey("M_Kasir")]
+        public int Id_Kasir { get; set; }
+        [ForeignKey("M_Teknisi")]
         public int Id_Teknisi { get; set; } 
         [Required]
         public decimal Total_Harga { get; set; }

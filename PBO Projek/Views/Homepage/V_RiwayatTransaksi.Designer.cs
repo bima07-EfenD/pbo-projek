@@ -39,7 +39,7 @@
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column6 = new DataGridViewTextBoxColumn();
-            Column7 = new DataGridViewTextBoxColumn();
+            Column8 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             Detail = new DataGridViewImageColumn();
@@ -104,15 +104,16 @@
             dgvLay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvLay.ColumnHeadersHeight = 35;
             dgvLay.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvLay.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column6, Column7, Column4, Column5, Detail });
+            dgvLay.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column6, Column8, Column4, Column5, Detail });
             dgvLay.Dock = DockStyle.Top;
             dgvLay.EnableHeadersVisualStyles = false;
             dgvLay.Location = new Point(0, 0);
             dgvLay.Name = "dgvLay";
             dgvLay.RowHeadersVisible = false;
             dgvLay.RowHeadersWidth = 51;
-            dgvLay.Size = new Size(918, 576);
+            dgvLay.Size = new Size(918, 656);
             dgvLay.TabIndex = 0;
+            dgvLay.CellContentClick += dgvLay_CellContentClick;
             // 
             // Column1
             // 
@@ -145,13 +146,13 @@
             Column6.Name = "Column6";
             Column6.Width = 134;
             // 
-            // Column7
+            // Column8
             // 
-            Column7.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Column7.HeaderText = "Nama Teknisi";
-            Column7.MinimumWidth = 6;
-            Column7.Name = "Column7";
-            Column7.Width = 124;
+            Column8.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column8.HeaderText = "Nama Kasir";
+            Column8.MinimumWidth = 6;
+            Column8.Name = "Column8";
+            Column8.Width = 112;
             // 
             // Column4
             // 
@@ -200,14 +201,14 @@
         private Panel panel4;
         private TextBox textBox1;
         private Label label2;
+        public DataGridView dgvLay;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column6;
-        private DataGridViewTextBoxColumn Column7;
+        private DataGridViewTextBoxColumn Column8;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewImageColumn Detail;
-        public DataGridView dgvLay;
     }
 }

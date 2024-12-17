@@ -63,6 +63,7 @@ namespace PBO_Projek.Views.Homepage
         {
             FormSukuCadang sukuCadang = new FormSukuCadang(csuca, true);
             sukuCadang.ShowDialog();
+            dgvsukucadang();
         }
 
         public void dgvsukucadang()
@@ -91,6 +92,7 @@ namespace PBO_Projek.Views.Homepage
         {
             FormTambahKategori kategori = new FormTambahKategori(csuca);
             kategori.ShowDialog();
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

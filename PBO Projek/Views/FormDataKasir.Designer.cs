@@ -107,7 +107,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(105, 189);
+            label1.Location = new Point(101, 189);
             label1.Name = "label1";
             label1.Size = new Size(195, 34);
             label1.TabIndex = 31;

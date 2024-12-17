@@ -126,31 +126,13 @@
   <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Column6.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column8.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="Column4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="Column5.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Detail.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Column6.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Detail.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAVCAYAAABG1c6oAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAAS9JREFUOE/dlWtxAkEQhE8CDsBJ4iA4SBwEB8RB4iASkBAJSIiESAj9XV1TfcPw
-        +ktXfbW3j5mdmV2WYdJavF2BNTfpS/zfyIe4qs6w8i1+p+9PcVHVuGMrVmI/9XdiIVpV4w4cIpz8CMZw
-        ziYnqsYddmiRNuOU4cRpNe6oDhFjzBHpTNW4g0hIteK5marxvTyowz/Byb6IpeD60D6JVzFT5yDB0dlL
-        3KlzYvJBeBacLNF6niuzEbO7mA6Sd4FY7CsC/OxIk8ipH2O0x829MOExsGwEvuCOiDYjJotjJ6HYiHRy
-        nFoSCd9EijL68cTdSRwJO+Y4fZfAp5sZjE9b7mBIwyfr3yzkC8N8Ps7MjTYswDN1S3woiL+AjIRv146W
-        Te+6Wha1xZgNCYK0w9EwHACHvf3ixx8GIwAAAABJRU5ErkJggg==
-</value>
-  </data>
 </root>

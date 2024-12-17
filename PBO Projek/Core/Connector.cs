@@ -82,11 +82,15 @@ CREATE TABLE IF NOT EXISTS Data_Servis (
     Nama_Pemilik VARCHAR(100) NOT NULL,
     No_Kendaraan VARCHAR(20) NOT NULL,
     Id_Teknisi INT NOT NULL,
+    Id_Kasir INT NOT NULL,
     Total_Harga DECIMAL(18, 2) NOT NULL,
     Tanggal_Servis TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT FK_Teknisi FOREIGN KEY (Id_Teknisi)
-    REFERENCES Data_Teknisi(Id_Teknisi) ON DELETE CASCADE
+        REFERENCES Data_Teknisi(Id_Teknisi) ON DELETE CASCADE,
+    CONSTRAINT FK_Kasir FOREIGN KEY (Id_Kasir)
+        REFERENCES Data_Kasir(Id_Kasir) ON DELETE CASCADE
 );
+
 
     ");
 

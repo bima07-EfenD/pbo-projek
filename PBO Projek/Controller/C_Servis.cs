@@ -161,28 +161,30 @@ namespace PBO_Projek.Controller
                     try
                     {
                         string queryHeader = @"
-                    INSERT INTO Data_Servis (Nama_Pemilik, No_Kendaraan, Id_Teknisi, Total_Harga, Tanggal_Servis)
-                    VALUES (@NamaPemilik, @NoKendaraan, @IdTeknisi, @TotalHarga, @TanggalServis)
-                    RETURNING Id_Servis;";
+                INSERT INTO Data_Servis (Nama_Pemilik, No_Kendaraan, Id_Teknisi, Id_Kasir, Total_Harga, Tanggal_Servis)
+                VALUES (@NamaPemilik, @NoKendaraan, @IdTeknisi, @IdKasir, @TotalHarga, @TanggalServis)
+                RETURNING Id_Servis;";
+
                         int idServis;
                         using (var cmd = new NpgsqlCommand(queryHeader, conn))
                         {
                             cmd.Parameters.AddWithValue("@NamaPemilik", servisHeader.Nama_Pemilik);
                             cmd.Parameters.AddWithValue("@NoKendaraan", servisHeader.No_Kendaraan);
                             cmd.Parameters.AddWithValue("@IdTeknisi", servisHeader.Id_Teknisi);
+                            cmd.Parameters.AddWithValue("@IdKasir", M_Kasir.Id);  
                             cmd.Parameters.AddWithValue("@TotalHarga", servisHeader.Total_Harga);
                             cmd.Parameters.AddWithValue("@TanggalServis", servisHeader.Tanggal_Servis);
                             idServis = (int)cmd.ExecuteScalar();
                         }
 
                         string queryDetail = @"
-                    INSERT INTO Detail_Servis (Id_Servis, Id_Layanan, Id_Suku_Cadang, Jumlah, Harga)
-                    VALUES (@IdServis, @IdLayanan, @IdSukuCadang, @Jumlah, @Harga);";
+                INSERT INTO Detail_Servis (Id_Servis, Id_Layanan, Id_Suku_Cadang, Jumlah, Harga)
+                VALUES (@IdServis, @IdLayanan, @IdSukuCadang, @Jumlah, @Harga);";
 
                         string queryUpdateStok = @"
-                    UPDATE Data_Suku_Cadang
-                    SET Stok = Stok - @Jumlah
-                    WHERE Id_Suku_Cadang = @IdSukuCadang AND Stok >= @Jumlah;";
+                UPDATE Data_Suku_Cadang
+                SET Stok = Stok - @Jumlah
+                WHERE Id_Suku_Cadang = @IdSukuCadang AND Stok >= @Jumlah;";
 
                         foreach (var detail in servisDetails)
                         {
@@ -196,7 +198,7 @@ namespace PBO_Projek.Controller
                                 cmdDetail.ExecuteNonQuery();
                             }
 
-                            if (detail.Id_Suku_Cadang != 0) 
+                            if (detail.Id_Suku_Cadang != 0)
                             {
                                 using (var cmdUpdateStok = new NpgsqlCommand(queryUpdateStok, conn))
                                 {
@@ -221,6 +223,7 @@ namespace PBO_Projek.Controller
                 }
             }
         }
+
 
     }
 }

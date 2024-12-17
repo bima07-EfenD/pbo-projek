@@ -55,6 +55,7 @@ namespace PBO_Projek.Controller
                     {
                         if (reader.Read())
                         {
+                            M_Kasir.Id = reader.GetInt32(reader.GetOrdinal("Id_Kasir"));
                             return new M_Kasir
                             {
                                 Id_Kasir = reader.GetInt32(reader.GetOrdinal("Id_Kasir")),
@@ -69,22 +70,12 @@ namespace PBO_Projek.Controller
             return null;
         }
 
-        public bool KasirLogin(string username, string password)
-        {
-            M_Kasir kasir = GetKasirByUsername(username);
-            if (kasir != null && kasir.Password == password)
-            {
-                return true; 
-            }
-            return false;
-
-        }
-
         public void LoginKasir(string username, string password)
         {
             M_Kasir kasir = GetKasirByUsername(username);
             if (kasir != null && kasir.Password == password)
-            { 
+            {
+                M_Kasir.Id = kasir.Id_Kasir;
                 MessageBox.Show($"Selamat datang, {kasir.Nama_Kasir}!", "Login Berhasil", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 HomepageKasir homepageKasir = new HomepageKasir();
                 v_mainFrame.Hide();

@@ -26,5 +26,17 @@ namespace PBO_Projek.Views.Homepage
         {
             RiwayatTransaksi.LoadRiwayatTransaksi();
         }
+
+        private void dgvLay_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && dgvLay.Columns[e.ColumnIndex].Name == "Detail")
+            {
+                int idServis = Convert.ToInt32(dgvLay.Rows[e.RowIndex].Cells["Column2"].Value);
+
+                FormDetailTransaksi detailForm = new FormDetailTransaksi(RiwayatTransaksi);
+                detailForm.LoadDetailServis(idServis);
+                detailForm.ShowDialog();
+            }
+        }
     }
 }
