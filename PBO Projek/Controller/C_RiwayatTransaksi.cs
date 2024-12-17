@@ -78,10 +78,9 @@ namespace PBO_Projek.Controller
             {
                 string query = @"
             SELECT ds.Id_Detail_Servis, ds.Id_Servis, ds.Id_Layanan, ds.Id_Suku_Cadang, 
-                 ds.Jumlah, ds.Harga, t.Nama_Teknisi, sc.Nama_Suku_Cadang
+                ds.Jumlah, ds.Harga, ds.Id_Teknisi, t.Nama_Teknisi, sc.Nama_Suku_Cadang
             FROM Detail_Servis ds
-            INNER JOIN Data_Servis s ON ds.Id_Servis = s.Id_Servis
-            INNER JOIN Data_Teknisi t ON s.Id_Teknisi = t.Id_Teknisi
+            LEFT JOIN Data_Teknisi t ON ds.Id_Teknisi = t.Id_Teknisi
             LEFT JOIN Data_Suku_Cadang sc ON ds.Id_Suku_Cadang = sc.Id_Suku_Cadang
             WHERE ds.Id_Servis = @IdServis";
 
@@ -103,8 +102,10 @@ namespace PBO_Projek.Controller
                                     Id_Layanan = reader.IsDBNull(reader.GetOrdinal("Id_Layanan")) ? 0 : reader.GetInt32(reader.GetOrdinal("Id_Layanan")),
                                     Id_Suku_Cadang = reader.IsDBNull(reader.GetOrdinal("Id_Suku_Cadang")) ? 0 : reader.GetInt32(reader.GetOrdinal("Id_Suku_Cadang")),
                                     Jumlah = reader.GetInt32(reader.GetOrdinal("Jumlah")),
-                                    Harga = reader.GetDecimal(reader.GetOrdinal("Harga"))
+                                    Harga = reader.GetDecimal(reader.GetOrdinal("Harga")),
+                                    Id_Teknisi = reader.IsDBNull(reader.GetOrdinal("Id_Teknisi")) ? 0 : reader.GetInt32(reader.GetOrdinal("Id_Teknisi")) 
                                 });
+
                             }
                         }
                     }
@@ -117,17 +118,6 @@ namespace PBO_Projek.Controller
             }
 
             return detailList;
-        }
-
-
-        private class RiwayatViewModel
-        {
-            public int Id_Servis { get; set; }
-            public string Nama_Pemilik { get; set; }
-            public string No_Kendaraan { get; set; }
-            public string Nama_Teknisi { get; set; }
-            public DateTime Tanggal_Servis { get; set; }
-            public decimal Total_Harga { get; set; }
         }
 
         public void LoadRiwayatTransaksi()
@@ -168,15 +158,15 @@ namespace PBO_Projek.Controller
 
                 foreach (var detail in detailList)
                 {
+                    string namaTeknisi = detail.Id_Teknisi != 0 ? GetNamaTeknisiById(detail.Id_Teknisi) : "-";
                     string namaLayanan = detail.Id_Layanan != 0 ? GetNamaLayananById(detail.Id_Layanan) : "-";
-                    string namaSukuCadang = detail.Id_Suku_Cadang != 0 ? GetNamaSukuCadangById(detail.Id_Suku_Cadang) : "-"; 
-                    string namaTeknisi = GetNamaTeknisiById(idServis);
+                    string namaSukuCadang = detail.Id_Suku_Cadang != 0 ? GetNamaSukuCadangById(detail.Id_Suku_Cadang) : "-";
 
                     dgvDetail.Rows.Add(
-                        detail.Id_Detail_Servis,
-                        namaTeknisi,
+                        idServis,
+                        namaTeknisi, 
                         namaLayanan,
-                        namaSukuCadang, 
+                        namaSukuCadang,
                         detail.Jumlah,
                         detail.Harga.ToString("C")
                     );
@@ -187,6 +177,7 @@ namespace PBO_Projek.Controller
                 MessageBox.Show("Error: " + ex.Message, "Load Detail Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
 
         private string GetNamaTeknisiById(int idTeknisi)
@@ -293,6 +284,49 @@ namespace PBO_Projek.Controller
 
             return namaSukuCadang;
         }
+
+        public DataTable SearchRiwayatTransaksi(string searchText)
+        {
+            string query = @"
+    SELECT 
+        ds.Id_Servis, 
+        ds.Nama_Pemilik, 
+        ds.No_Kendaraan, 
+        ds.Id_Kasir, 
+        k.Nama_Kasir, 
+        ds.Total_Harga, 
+        ds.Tanggal_Servis
+    FROM 
+        Data_Servis ds
+    LEFT JOIN 
+        Data_Kasir k ON ds.Id_Kasir = k.Id_Kasir
+    WHERE 
+        LOWER(ds.Nama_Pemilik) LIKE LOWER(@SearchText)
+        OR LOWER(ds.No_Kendaraan) LIKE LOWER(@SearchText)
+    ORDER BY 
+        ds.Tanggal_Servis DESC";
+
+            using (var conn = new NpgsqlConnection(addres))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@SearchText", "%" + searchText + "%");
+
+                    DataTable dataTable = new DataTable();
+                    dataTable.Load(cmd.ExecuteReader());
+                    dataTable.Columns.Add("No", typeof(int));
+
+                    for (int i = 0; i < dataTable.Rows.Count; i++)
+                    {
+                        dataTable.Rows[i]["No"] = i + 1;
+                    }
+
+                    return dataTable;
+                }
+            }
+        }
+
 
     }
 }

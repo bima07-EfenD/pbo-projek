@@ -46,6 +46,10 @@
             Column2 = new DataGridViewTextBoxColumn();
             panel2 = new Panel();
             dataGridViewPesanan = new DataGridView();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            Column1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            Hapus = new DataGridViewImageColumn();
             panel4 = new Panel();
             label10 = new Label();
             label9 = new Label();
@@ -63,10 +67,6 @@
             button3 = new Button();
             label8 = new Label();
             textBox4 = new TextBox();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            Column1 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-            Hapus = new DataGridViewImageColumn();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewLayanan).BeginInit();
             panel1.SuspendLayout();
@@ -95,9 +95,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(40, 40);
             label1.Name = "label1";
-            label1.Size = new Size(131, 20);
+            label1.Size = new Size(107, 20);
             label1.TabIndex = 2;
-            label1.Text = "Nama Kendaraan :";
+            label1.Text = "Nama Pemilik :";
             // 
             // label2
             // 
@@ -245,6 +245,38 @@
             dataGridViewPesanan.Size = new Size(330, 491);
             dataGridViewPesanan.TabIndex = 1;
             dataGridViewPesanan.CellContentClick += dataGridViewPesanan_CellContentClick;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn1.HeaderText = "Pesanan";
+            dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // Column1
+            // 
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column1.HeaderText = "Qty";
+            Column1.MinimumWidth = 6;
+            Column1.Name = "Column1";
+            Column1.Width = 59;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewTextBoxColumn2.HeaderText = "Harga";
+            dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.Width = 77;
+            // 
+            // Hapus
+            // 
+            Hapus.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Hapus.HeaderText = "";
+            Hapus.Image = (Image)resources.GetObject("Hapus.Image");
+            Hapus.MinimumWidth = 6;
+            Hapus.Name = "Hapus";
+            Hapus.Width = 6;
             // 
             // panel4
             // 
@@ -410,38 +442,6 @@
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(330, 27);
             textBox4.TabIndex = 18;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn1.HeaderText = "Pesanan";
-            dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // Column1
-            // 
-            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Column1.HeaderText = "Qty";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            Column1.Width = 59;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewTextBoxColumn2.HeaderText = "Harga";
-            dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            dataGridViewTextBoxColumn2.Width = 77;
-            // 
-            // Hapus
-            // 
-            Hapus.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Hapus.HeaderText = "";
-            Hapus.Image = (Image)resources.GetObject("Hapus.Image");
-            Hapus.MinimumWidth = 6;
-            Hapus.Name = "Hapus";
-            Hapus.Width = 6;
             // 
             // V_LayananServis
             // 

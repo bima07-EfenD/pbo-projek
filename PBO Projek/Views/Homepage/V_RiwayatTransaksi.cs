@@ -38,5 +38,31 @@ namespace PBO_Projek.Views.Homepage
                 detailForm.ShowDialog();
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                dgvLay.Rows.Clear();
+                DataTable dataTable = RiwayatTransaksi.SearchRiwayatTransaksi(textBox1.Text);
+
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    dgvLay.Rows.Add(
+                        row["No"],
+                        row["Id_Servis"],
+                        row["Nama_Pemilik"],
+                        row["No_Kendaraan"],
+                        row["Nama_Kasir"],
+                        Convert.ToDateTime(row["Tanggal_Servis"]).ToString("dd/MM/yyyy"),
+                        row["Total_Harga"].ToString()
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Search Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

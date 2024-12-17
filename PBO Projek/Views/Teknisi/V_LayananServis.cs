@@ -214,6 +214,7 @@ namespace PBO_Projek.Views.Teknisi
         {
             try
             {
+                // Validasi input
                 if (string.IsNullOrWhiteSpace(textBox2.Text))
                 {
                     MessageBox.Show("Nama Pemilik harus diisi!", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -252,10 +253,15 @@ namespace PBO_Projek.Views.Teknisi
                 {
                     Nama_Pemilik = textBox2.Text.Trim(),
                     No_Kendaraan = textBox1.Text.Trim(),
-                    Id_Teknisi = Convert.ToInt32(comboBox3.SelectedValue),
                     Total_Harga = totalHarga,
                     Tanggal_Servis = DateTime.Now
                 };
+
+                if (comboBox3.SelectedValue == null || !int.TryParse(comboBox3.SelectedValue.ToString(), out int idTeknisi))
+                {
+                    MessageBox.Show("Teknisi harus dipilih!", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
                 servisDetails.Clear();
                 foreach (DataGridViewRow row in dataGridViewPesanan.Rows)
@@ -266,6 +272,7 @@ namespace PBO_Projek.Views.Teknisi
                         {
                             Id_Layanan = row.Cells["ID_Layanan"].Value != null ? Convert.ToInt32(row.Cells["ID_Layanan"].Value) : 0,
                             Id_Suku_Cadang = row.Cells["ID_SukuCadang"].Value != null ? Convert.ToInt32(row.Cells["ID_SukuCadang"].Value) : 0,
+                            Id_Teknisi = idTeknisi, 
                             Jumlah = Convert.ToInt32(row.Cells["Jumlah"].Value),
                             Harga = Convert.ToDecimal(row.Cells["Harga"].Value)
                         };
@@ -284,7 +291,6 @@ namespace PBO_Projek.Views.Teknisi
                 Servis.SimpanServis(servisHeader, servisDetails);
                 MessageBox.Show($"Transaksi berhasil !!!\n\nTotal Harga: {totalHarga:C}\nJumlah Bayar: {jumlahBayar:C}\nKembalian: {kembalian:C}",
                                 "Transaksi Berhasil", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 ResetForm();
             }
             catch (Exception ex)
@@ -297,7 +303,8 @@ namespace PBO_Projek.Views.Teknisi
 
 
 
-        
+
+
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {

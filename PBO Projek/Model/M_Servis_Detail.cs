@@ -16,6 +16,8 @@ namespace PBO_Projek.Model
         public int Id_Servis { get; set; }
         [ForeignKey("M_Layanan")]
         public int Id_Layanan { get; set; }
+        [ForeignKey("M_Teknisi")]
+        public int Id_Teknisi { get; set; }
         [ForeignKey("M_SukuCadang")]
         public int Id_Suku_Cadang { get; set; }
         [Required]

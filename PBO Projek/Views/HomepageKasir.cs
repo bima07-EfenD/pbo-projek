@@ -1,4 +1,5 @@
 ﻿using PBO_Projek.Controller;
+using PBO_Projek.Views.Homepage;
 using PBO_Projek.Views.Teknisi;
 using System;
 using System.Collections.Generic;
@@ -35,12 +36,16 @@ namespace PBO_Projek.Views
         {
             panelSlide.Height = button2.Height;
             panelSlide.Top = button2.Top;
+            Controller.V_sukuCadang = new V_SukuCadang(Controller);
+            Controller.SwitchView(Controller.V_sukuCadang);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             panelSlide.Height = button3.Height;
             panelSlide.Top = button3.Top;
+            Controller.V_riwayatTransaksi = new V_RiwayatTransaksi(Controller);
+            Controller.SwitchView(Controller.V_riwayatTransaksi);
         }
 
         private void button5_Click(object sender, EventArgs e)

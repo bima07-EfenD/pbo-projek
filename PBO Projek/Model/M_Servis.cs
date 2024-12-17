@@ -18,8 +18,6 @@ namespace PBO_Projek.Model
         public string No_Kendaraan { get; set; }
         [ForeignKey("M_Kasir")]
         public int Id_Kasir { get; set; }
-        [ForeignKey("M_Teknisi")]
-        public int Id_Teknisi { get; set; } 
         [Required]
         public decimal Total_Harga { get; set; }
         public DateTime Tanggal_Servis { get; set; }
