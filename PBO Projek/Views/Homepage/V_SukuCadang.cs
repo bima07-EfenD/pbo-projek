@@ -17,7 +17,9 @@ namespace PBO_Projek.Views.Homepage
     {
         C_Homepage Controller;
         C_SukuCadang csuca;
+        M_Kasir kasir = new M_Kasir();
         string title = "Mekanik Hunter";
+
         public V_SukuCadang(C_Homepage controller)
         {
             InitializeComponent();
@@ -34,11 +36,7 @@ namespace PBO_Projek.Views.Homepage
 
         private void V_SukuCadang_Load(object sender, EventArgs e)
         {
-            if(M_Kasir.Id != null)
-            {
-                button1.Visible = false;
-                button2.Visible = false;
-            }
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
